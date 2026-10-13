@@ -15,7 +15,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="style.css?v=10">
+<link rel="stylesheet" href="style.css?v=11">
 </head>
 <body>
 <a class="skip" href="#lavori" data-en="Skip to work">Vai ai lavori</a>
@@ -76,11 +76,11 @@
         <figure><img src="img/fluid-touch.jpg" alt="Totem touch screen educativo dell'exhibition" data-en-alt="Educational touch-screen kiosk in the exhibition" loading="lazy"><figcaption data-en="Educational touch screen">Touch screen educativo</figcaption></figure>
         <figure class="wide posts-row">
         <div class="posts">
-          <img src="img/fluid-post-bdsm.jpg" alt="Post social FLUID*: BDSM" data-en-alt="FLUID* social post: BDSM" loading="lazy">
-          <img src="img/fluid-post-kiss.jpg" alt="Post social FLUID*: Kiss" data-en-alt="FLUID* social post: Kiss" loading="lazy">
-          <img src="img/fluid-post-legami.jpg" alt="Post social FLUID*: Legami" data-en-alt="FLUID* social post: Legami" loading="lazy">
-          <img src="img/fluid-post-orgasm.jpg" alt="Post social FLUID*: Orgasm" data-en-alt="FLUID* social post: Orgasm" loading="lazy">
-          <img src="img/fluid-post-sexting.jpg" alt="Post social FLUID*: Sexting" data-en-alt="FLUID* social post: Sexting" loading="lazy">
+          <button class="zoom" type="button" data-zoom="img/fluid-post-bdsm.jpg" aria-label="Ingrandisci: Post social FLUID*: BDSM" data-en-label="Enlarge"><img src="img/fluid-post-bdsm.jpg" alt="Post social FLUID*: BDSM" data-en-alt="FLUID* social post: BDSM" loading="lazy"></button>
+          <button class="zoom" type="button" data-zoom="img/fluid-post-kiss.jpg" aria-label="Ingrandisci: Post social FLUID*: Kiss" data-en-label="Enlarge"><img src="img/fluid-post-kiss.jpg" alt="Post social FLUID*: Kiss" data-en-alt="FLUID* social post: Kiss" loading="lazy"></button>
+          <button class="zoom" type="button" data-zoom="img/fluid-post-legami.jpg" aria-label="Ingrandisci: Post social FLUID*: Legami" data-en-label="Enlarge"><img src="img/fluid-post-legami.jpg" alt="Post social FLUID*: Legami" data-en-alt="FLUID* social post: Legami" loading="lazy"></button>
+          <button class="zoom" type="button" data-zoom="img/fluid-post-orgasm.jpg" aria-label="Ingrandisci: Post social FLUID*: Orgasm" data-en-label="Enlarge"><img src="img/fluid-post-orgasm.jpg" alt="Post social FLUID*: Orgasm" data-en-alt="FLUID* social post: Orgasm" loading="lazy"></button>
+          <button class="zoom" type="button" data-zoom="img/fluid-post-sexting.jpg" aria-label="Ingrandisci: Post social FLUID*: Sexting" data-en-label="Enlarge"><img src="img/fluid-post-sexting.jpg" alt="Post social FLUID*: Sexting" data-en-alt="FLUID* social post: Sexting" loading="lazy"></button>
         </div>
           <figcaption data-en="Social campaign: one post for each topic of the talks">Campagna social: un post per ogni tema dei talk</figcaption>
         </figure>
@@ -202,8 +202,17 @@
   </video>
 </dialog>
 
+
+<dialog class="lightbox" id="lightbox" aria-label="Immagine ingrandita">
+  <img id="lightbox-img" src="" alt="">
+  <button class="lb-btn lb-close" type="button" data-lb="close" aria-label="Chiudi" data-en-label="Close"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg></button>
+  <button class="lb-btn lb-prev" type="button" data-lb="prev" aria-label="Immagine precedente" data-en-label="Previous image"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <button class="lb-btn lb-next" type="button" data-lb="next" aria-label="Immagine successiva" data-en-label="Next image"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <p class="lb-count" id="lightbox-count" aria-live="polite"></p>
+</dialog>
+
 <footer class="foot"><p>© 2026 Virginia Dalmasso</p></footer>
 
-<script src="script.js?v=10"></script>
+<script src="script.js?v=11"></script>
 </body>
 </html>

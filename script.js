@@ -49,3 +49,32 @@
   modal.addEventListener('close', stop);
   modal.addEventListener('click', function (e) { if (e.target === modal) modal.close(); });
 })();
+
+// Lightbox for zoomable images
+(function () {
+  var box = document.getElementById('lightbox');
+  var img = document.getElementById('lightbox-img');
+  var count = document.getElementById('lightbox-count');
+  var items = Array.prototype.slice.call(document.querySelectorAll('[data-zoom]'));
+  if (!box || !items.length) return;
+  var i = 0;
+  function show(n) {
+    i = (n + items.length) % items.length;
+    var it = items[i];
+    img.src = it.getAttribute('data-zoom');
+    img.alt = it.querySelector('img').alt;
+    count.textContent = (i + 1) + ' / ' + items.length;
+  }
+  items.forEach(function (it, n) {
+    it.addEventListener('click', function () { show(n); if (box.showModal) box.showModal(); else box.setAttribute('open', ''); });
+  });
+  box.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-lb]');
+    if (b) { var a = b.getAttribute('data-lb'); if (a === 'close') box.close(); if (a === 'prev') show(i - 1); if (a === 'next') show(i + 1); return; }
+    if (e.target === box) box.close();
+  });
+  box.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft') show(i - 1);
+    if (e.key === 'ArrowRight') show(i + 1);
+  });
+})();
