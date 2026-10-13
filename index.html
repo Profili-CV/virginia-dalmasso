@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="it">
+<html lang="it" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,7 +15,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="style.css?v=11">
+<link rel="stylesheet" href="style.css?v=12">
 </head>
 <body>
 <a class="skip" href="#lavori" data-en="Skip to work">Vai ai lavori</a>
@@ -171,7 +171,7 @@
     <h2 data-en="About">Chi sono</h2>
     <div class="about-grid">
       <div>
-        <p class="about-lead" data-en="I like starting from what a company actually needs and turning it into a clear creative brief, then into images people remember.">Mi piace partire da quello che serve davvero a un'azienda e trasformarlo in un brief creativo chiaro, e poi in immagini che restano.</p>
+        <p class="about-lead scrub" data-en="I like starting from what a company actually needs and turning it into a clear creative brief, then into images people remember.">Mi piace partire da quello che serve davvero a un'azienda e trasformarlo in un brief creativo chiaro, e poi in immagini che restano.</p>
         <p data-en="Outside work: sport, cinema and art.">Fuori dal lavoro: sport, cinema e arte.</p>
         <dl class="facts">
           <dt data-en="Tools">Strumenti</dt>
@@ -203,16 +203,11 @@
 </dialog>
 
 
-<dialog class="lightbox" id="lightbox" aria-label="Immagine ingrandita">
-  <img id="lightbox-img" src="" alt="">
-  <button class="lb-btn lb-close" type="button" data-lb="close" aria-label="Chiudi" data-en-label="Close"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg></button>
-  <button class="lb-btn lb-prev" type="button" data-lb="prev" aria-label="Immagine precedente" data-en-label="Previous image"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-  <button class="lb-btn lb-next" type="button" data-lb="next" aria-label="Immagine successiva" data-en-label="Next image"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-  <p class="lb-count" id="lightbox-count" aria-live="polite"></p>
-</dialog>
+
 
 <footer class="foot"><p>© 2026 Virginia Dalmasso</p></footer>
 
-<script src="script.js?v=11"></script>
+<script src="script.js?v=12"></script>
+<script src="lightbox.js?v=1" data-images=".ph img, .gallery img"></script>
 </body>
 </html>
