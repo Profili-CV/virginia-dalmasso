@@ -32,3 +32,20 @@
   try { saved = localStorage.getItem('lang'); } catch (e) {}
   if (saved === 'en') setLang('en');
 })();
+
+// Video teaser in a modal dialog
+(function () {
+  var modal = document.getElementById('video-modal');
+  var video = document.getElementById('fluid-video');
+  var open = document.querySelector('[data-video-open]');
+  var close = document.querySelector('[data-video-close]');
+  if (!modal || !video || !open) return;
+  open.addEventListener('click', function () {
+    if (modal.showModal) modal.showModal(); else modal.setAttribute('open', '');
+    try { video.play(); } catch (e) {}
+  });
+  function stop() { video.pause(); }
+  close.addEventListener('click', function () { modal.close(); });
+  modal.addEventListener('close', stop);
+  modal.addEventListener('click', function (e) { if (e.target === modal) modal.close(); });
+})();

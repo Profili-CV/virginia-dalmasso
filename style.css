@@ -154,3 +154,18 @@ h3 { font-family: var(--display); font-weight: 700; font-size: 24px; line-height
 .posts { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
 .gallery .posts img { aspect-ratio: 1; }
 @media (max-width: 760px) { .posts { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; } .posts img:last-child { grid-column: 1 / -1; } }
+
+/* Video teaser button and modal */
+.play-btn {
+  display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 22px 0 18px;
+  font: 700 15px var(--body); color: #fff; background: var(--accent); border: 0; border-radius: 999px; cursor: pointer;
+}
+.play-btn:hover { filter: brightness(1.1); }
+.video-modal { padding: 0; border: 0; background: transparent; width: min(1100px, 94vw); max-width: none; overflow: visible; }
+.video-modal::backdrop { background: rgba(10, 8, 12, 0.88); }
+.video-modal video { display: block; width: 100%; height: auto; border-radius: 6px; background: #000; }
+.video-close {
+  position: absolute; top: -52px; right: 0; width: 44px; height: 44px; border-radius: 50%;
+  display: grid; place-items: center; color: #fff; background: rgba(255,255,255,0.12); border: 0; cursor: pointer;
+}
+.video-close:hover { background: rgba(255,255,255,0.24); }
