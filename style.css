@@ -261,3 +261,14 @@ html.lenis, html.lenis body { height: auto; }
 .nav nav a.is-active, .nav nav a[aria-current="page"] { color: var(--accent); }
 .nav nav a.is-active::after, .nav nav a[aria-current="page"]::after { transform: scaleX(1); }
 @media (prefers-reduced-motion: reduce) { .nav nav a, .nav nav a::after { transition: none; } }
+
+/* Project card that opens its own page */
+.ph-link .cover-link { position: absolute; inset: 0; display: block; }
+.ph-link img { transition: transform .5s ease, filter .5s ease; }
+.ph-link:hover img, .ph-link:focus-within img { transform: scale(1.03); filter: brightness(.82); }
+.cover-cta { position: absolute; right: 14px; bottom: 14px; padding: 10px 16px; border-radius: 999px; background: #0A0A0A; color: #fff; font-weight: 600; font-size: 14px; opacity: 0; transform: translateY(6px); transition: opacity .3s ease, transform .3s ease, background .3s ease; }
+.ph-link:hover .cover-cta, .ph-link:focus-within .cover-cta { opacity: 1; transform: none; background: #03B1A5; color: #0A0A0A; }
+.title-link { text-decoration: none; }
+.title-link:hover { color: var(--accent); }
+@media (hover: none) { .cover-cta { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .ph-link img, .cover-cta { transition: none; } }
