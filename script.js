@@ -114,3 +114,38 @@
   document.addEventListener('langchange', split);
   split();
 })();
+
+// Soundtrack: an original early-2000s style loop, played only when the visitor asks for it.
+(function () {
+  var audio = document.getElementById('soundtrack');
+  var btn = document.getElementById('sound-btn');
+  if (!audio || !btn) return;
+  var fade;
+  function label() {
+    var en = document.documentElement.lang === 'en';
+    var on = btn.getAttribute('aria-pressed') === 'true';
+    btn.setAttribute('aria-label', on ? (en ? 'Pause the soundtrack' : 'Metti in pausa la colonna sonora') : (en ? 'Play the soundtrack' : 'Fai partire la colonna sonora'));
+  }
+  function ramp(to, done) {
+    clearInterval(fade);
+    fade = setInterval(function () {
+      var v = audio.volume + (to > audio.volume ? 0.05 : -0.05);
+      if ((to > audio.volume && v >= to) || (to <= audio.volume && v <= to)) { audio.volume = Math.max(0, Math.min(1, to)); clearInterval(fade); if (done) done(); return; }
+      audio.volume = Math.max(0, Math.min(1, v));
+    }, 40);
+  }
+  function play() {
+    audio.volume = 0;
+    var p = audio.play();
+    if (p && p.catch) p.catch(function () { set(false); });
+    set(true); ramp(0.55);
+  }
+  function pause() { set(false); ramp(0, function () { audio.pause(); }); }
+  function set(on) { btn.setAttribute('aria-pressed', on ? 'true' : 'false'); label(); }
+  btn.addEventListener('click', function () { if (btn.getAttribute('aria-pressed') === 'true') pause(); else play(); });
+  document.addEventListener('langchange', label);
+  // the FLUID* teaser has its own sound: pause the music while it plays
+  var video = document.getElementById('fluid-video');
+  if (video) video.addEventListener('play', function () { if (btn.getAttribute('aria-pressed') === 'true') pause(); });
+  label();
+})();
