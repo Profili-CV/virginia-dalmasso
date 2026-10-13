@@ -61,12 +61,12 @@ img { max-width: 100%; display: block; }
 .hero-name { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 20px 24px; min-width: 0; }
 .hero h1 {
   margin: 0; min-width: 0;
-  font-family: var(--display); font-weight: 800; font-stretch: 75%;
+  font-family: var(--display); font-weight: 700; font-stretch: 92%;
   font-variation-settings: 'opsz' 96;
-  font-size: clamp(48px, 8.4vw, 116px); line-height: 1; letter-spacing: -0.035em;
+  font-size: clamp(46px, 7.6vw, 108px); line-height: 1.02; letter-spacing: -0.005em;
 }
 .hero h1 span { display: block; }
-.hero h1 span + span { color: var(--accent); font-weight: 300; font-stretch: 100%; letter-spacing: -0.04em; }
+.hero h1 span + span { color: var(--accent); font-weight: 300; font-stretch: 100%; letter-spacing: 0; }
 
 /* Seal: a packaging-style sticker that turns slowly */
 .seal { display: block; flex: none; width: clamp(80px, 7.5vw, 112px); margin-left: clamp(8px, 2vw, 32px); aspect-ratio: 1; text-decoration: none; color: var(--paper); border-radius: 50%; }
@@ -79,14 +79,14 @@ img { max-width: 100%; display: block; }
 .seal:hover { color: var(--paper); }
 @keyframes seal-spin { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) { .seal-ring { animation: none; } }
-.hero-role { font-family: var(--display); font-weight: 700; font-stretch: 75%; font-size: 22px; margin: 0 0 12px; color: var(--accent); }
+.hero-role { font-family: var(--display); font-weight: 600; font-stretch: 100%; font-size: 21px; margin: 0 0 12px; color: var(--accent); }
 .hero-lead { margin: 0 0 20px; max-width: 30em; }
 .hero-links { display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 0; }
 .hero-links a { font-weight: 600; }
 
 
 .section { max-width: var(--max); margin: 0 auto; padding: 80px var(--gutter); }
-.section h2, .contact h2 { font-family: var(--display); font-weight: 800; font-stretch: 75%; font-variation-settings: 'opsz' 96; font-size: clamp(36px, 5vw, 60px); line-height: 1; letter-spacing: -0.03em; margin: 0 0 40px; }
+.section h2, .contact h2 { font-family: var(--display); font-weight: 700; font-stretch: 92%; font-variation-settings: 'opsz' 96; font-size: clamp(36px, 5vw, 60px); line-height: 1; letter-spacing: -0.005em; margin: 0 0 40px; }
 h3 { font-family: var(--display); font-weight: 700; font-size: 24px; line-height: 1.15; margin: 16px 0 4px; }
 .meta { color: var(--grey); font-size: 15px; margin: 0 0 8px; }
 .todo { color: var(--accent); font-style: italic; }
