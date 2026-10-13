@@ -15,9 +15,18 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="style.css?v=17">
+<link rel="stylesheet" href="style.css?v=18">
+<script>try{if(!sessionStorage.getItem("pl-seen"))document.documentElement.classList.add("pl-on")}catch(e){document.documentElement.classList.add("pl-on")}</script>
 </head>
 <body>
+<div class="preloader" aria-hidden="true">
+  <div class="pl-seal">
+    <svg class="pl-ring" viewBox="0 0 200 200"><defs><path id="pl-path" d="M100,100 m-82,0 a82,82 0 1,1 164,0 a82,82 0 1,1 -164,0"/></defs><text><textPath href="#pl-path" textLength="508" lengthAdjust="spacing">THINK BIG · COMMUNICATION DESIGN · TORINO ·</textPath></text></svg>
+    <svg class="pl-track" viewBox="0 0 200 200"><circle cx="100" cy="100" r="64"/></svg>
+    <img class="pl-mono pl-mono-light" src="img/vd-monogramma.svg" alt="">
+    <img class="pl-mono pl-mono-dark" src="img/vd-monogramma-negativo.svg" alt="">
+  </div>
+</div>
 <a class="skip" href="#lavori" data-en="Skip to work">Vai ai lavori</a>
 
 <header class="nav">
@@ -260,5 +269,6 @@
 <script src="lenis.min.js?v=1.1.13"></script>
 <script src="motion.js?v=1"></script>
 <script src="nav-active.js?v=1"></script>
+<script src="preloader.js?v=1"></script>
 </body>
 </html>

@@ -289,3 +289,27 @@ html.lenis, html.lenis body { height: auto; }
 .logos li > a { font-weight: 500; align-self: flex-start; }
 @media (max-width: 760px) { .logos { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } .logos li:last-child { grid-column: 1 / -1; } .logos li:last-child .logo-tile { aspect-ratio: 2 / 1; } }
 @media (prefers-reduced-motion: reduce) { .logo-tile img { transition: none; } }
+
+/* Preloader: the seal spins around the VD monogram */
+.preloader { display: none; }
+.pl-on .preloader { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; background: var(--paper); transition: transform .8s cubic-bezier(.7,0,.2,1); animation: pl-failsafe 0s 5s forwards; }
+.pl-on body { overflow: hidden; }
+.pl-seal { position: relative; width: min(46vw, 230px); aspect-ratio: 1; transition: transform .6s cubic-bezier(.7,0,.2,1), opacity .4s ease; }
+.pl-seal svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.pl-ring { animation: seal-spin 7s linear infinite; }
+.pl-ring text { fill: var(--accent); font-family: var(--body); font-weight: 700; font-size: 14px; letter-spacing: 2px; }
+.pl-track circle { fill: none; stroke: var(--accent); stroke-width: 1.5; stroke-dasharray: 402; stroke-dashoffset: 402; transform: rotate(-90deg); transform-origin: 100px 100px; animation: pl-draw 1.3s cubic-bezier(.6,0,.3,1) forwards; }
+.pl-mono { position: absolute; left: 50%; top: 50%; width: 54%; transform: translate(-50%, -50%) scale(.85); opacity: 0; animation: pl-in .7s .25s cubic-bezier(.2,.8,.2,1) forwards; }
+.pl-mono-dark { display: none; }
+@media (prefers-color-scheme: dark) { .pl-mono-light { display: none; } .pl-mono-dark { display: block; } }
+.cs-momento .pl-mono-light { display: none; } .cs-momento .pl-mono-dark { display: block; }
+.pl-done .pl-seal { transform: scale(.7); opacity: 0; }
+.pl-done .preloader { transform: translateY(-100%); transition-delay: .2s; }
+@keyframes pl-draw { to { stroke-dashoffset: 0; } }
+@keyframes pl-in { to { opacity: 1; transform: translate(-50%, -50%) scale(1); } }
+@keyframes pl-failsafe { to { visibility: hidden; } }
+@media (prefers-reduced-motion: reduce) {
+  .pl-ring, .pl-track circle, .pl-mono { animation: none; }
+  .pl-track circle { stroke-dashoffset: 0; } .pl-mono { opacity: 1; transform: translate(-50%, -50%); }
+  .pl-on .preloader { transition: opacity .3s ease; } .pl-done .preloader { transform: none; opacity: 0; }
+}
