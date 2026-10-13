@@ -206,3 +206,25 @@ html.js .reveal.in { opacity: 1; transform: none; }
 .scrub .w { color: color-mix(in srgb, var(--ink) 22%, var(--paper)); transition: color .35s ease; }
 .scrub .w.lit { color: var(--ink); }
 @media (prefers-reduced-motion: reduce) { .scrub .w { transition: none; } }
+
+/* Smooth scrolling (Lenis) */
+html.lenis.lenis-smooth, .lenis.lenis-smooth { scroll-behavior: auto !important; }
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+/* Headings that rise letter by letter */
+.rise { display: inline-flex; overflow: hidden; padding-bottom: 0.08em; margin-bottom: -0.08em; }
+.rise .ch { display: inline-block; transform: translateY(110%); transition: transform .9s cubic-bezier(.2,.8,.2,1); }
+.risen .rise .ch { transform: none; }
+.motion-off .rise .ch { transform: none; transition: none; }
+
+/* Moving text band */
+.marquee { overflow: hidden; white-space: nowrap; padding: 18px 0; user-select: none; }
+.marquee-track { display: inline-flex; will-change: transform; }
+.marquee-track > span { display: inline-flex; align-items: center; gap: 28px; padding-right: 28px; font-family: var(--display); font-size: clamp(26px, 4vw, 52px); line-height: 1; }
+.marquee .dot { width: .38em; height: .38em; border-radius: 50%; display: inline-block; flex: none; }
+.motion-off .marquee-track { transform: none !important; }
+.marquee-vd { background: var(--accent); color: #fff; margin-block: clamp(24px, 4vw, 48px) 0; }
+.marquee-vd b { font-weight: 600; letter-spacing: -0.02em; }
+.marquee-vd .dot { background: currentColor; width: .22em; height: .22em; }
+@media (prefers-color-scheme: dark) { .marquee-vd { color: #1A161C; } }
