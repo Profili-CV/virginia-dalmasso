@@ -5,9 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Virginia Dalmasso · Communication Designer</title>
 <meta name="description" content="Virginia Dalmasso, communication designer a Torino. Brand identity, packaging, social media e video.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -26,7 +24,17 @@
 
 <main id="top">
   <section class="hero">
-    <h1>Virginia Dalmasso</h1>
+    <div class="hero-name">
+      <h1><span>Virginia</span> <span>Dalmasso</span></h1>
+      <a class="seal" href="#contatti" aria-label="Contattami" data-en-label="Contact me">
+        <svg viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+          <defs><path id="seal-path" d="M100,100 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0"/></defs>
+          <circle cx="100" cy="100" r="98" class="seal-bg"/>
+          <g class="seal-ring"><text><textPath href="#seal-path" startOffset="0" textLength="470" lengthAdjust="spacing">THINK BIG · COMMUNICATION DESIGN · TORINO ·</textPath></text></g>
+          <text x="100" y="114" text-anchor="middle" class="seal-mid">VD</text>
+        </svg>
+      </a>
+    </div>
     <div class="hero-side">
       <p class="hero-role" data-en="Communication designer, Turin">Communication designer, Torino</p>
       <p class="hero-lead" data-en="Four years of in-house experience turning marketing goals into visual identities, packaging, social content and video, from concept to print or launch. On every project my goal is to exceed expectations: think big.">Quattro anni di esperienza in azienda a tradurre obiettivi di marketing in identità visive, packaging, contenuti social e video, dal concept alla stampa o alla pubblicazione. Per ogni progetto, il mio obiettivo è superare le aspettative: think big.</p>
