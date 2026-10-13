@@ -149,3 +149,5 @@ h3 { font-family: var(--display); font-weight: 700; font-size: 24px; line-height
 .gallery .wide { grid-column: 1 / -1; }
 .gallery .wide img { aspect-ratio: 16 / 9; }
 @media (max-width: 760px) { .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; } }
+.work-wide .ph-cover { aspect-ratio: 16 / 9; background: #1A161C; }
+.ph-cover img { object-fit: cover; object-position: center top; }
