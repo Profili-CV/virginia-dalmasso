@@ -254,3 +254,10 @@ html.lenis, html.lenis body { height: auto; }
 @keyframes eq { 0% { height: 20%; } 100% { height: 100%; } }
 @media (prefers-reduced-motion: reduce) { .sound-btn[aria-pressed="true"] .eq i { animation: none; height: 80%; } }
 @media (max-width: 600px) { .sound-label { display: none; } .sound-btn { padding: 0; width: 48px; justify-content: center; } }
+
+/* Nav: the section you are reading lights up */
+.nav nav a { position: relative; padding: 4px 0; transition: color .25s ease; }
+.nav nav a::after { content: ""; position: absolute; left: 0; right: 0; bottom: -2px; height: 2px; border-radius: 2px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform .35s cubic-bezier(.2,.8,.2,1); }
+.nav nav a.is-active, .nav nav a[aria-current="page"] { color: var(--accent); }
+.nav nav a.is-active::after, .nav nav a[aria-current="page"]::after { transform: scaleX(1); }
+@media (prefers-reduced-motion: reduce) { .nav nav a, .nav nav a::after { transition: none; } }
