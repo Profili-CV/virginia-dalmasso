@@ -137,3 +137,15 @@ h3 { font-family: var(--display); font-weight: 700; font-size: 24px; line-height
   .facts dd { margin-bottom: 12px; }
   .nav nav { order: 3; width: 100%; gap: 16px; }
 }
+
+/* FLUID* feature + gallery */
+.work-feature { margin-bottom: -24px; }
+.ph-white { background: #fff; }
+.ph-white img { object-fit: contain; }
+.gallery { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-bottom: 40px; }
+.gallery figure { margin: 0; }
+.gallery img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; background: #fff; border-radius: 4px; }
+.gallery figcaption { font-size: 14px; color: var(--grey); margin-top: 6px; }
+.gallery .wide { grid-column: 1 / -1; }
+.gallery .wide img { aspect-ratio: 16 / 9; }
+@media (max-width: 760px) { .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; } }

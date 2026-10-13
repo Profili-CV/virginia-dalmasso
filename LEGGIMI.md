@@ -21,7 +21,7 @@ Ogni riquadro rosa mostra il nome del file che aspetta. Salva l'immagine nella c
 | img/olivetti.jpg | Olivetti (4:3) |
 | img/momento.jpg | Momento (4:3) |
 | img/fts.jpg | Sito F.T.S. (4:3) |
-| img/fluid.jpg | FLUID* con WOVO (orizzontale, 16:10) |
+| | img/fluid-*.jpg | FLUID*: logo e galleria (già inseriti) |
 | img/ritratto.jpg | Chi sono |
 
 Esporta le immagini a 1600 px di lato lungo, JPG qualità 80.
