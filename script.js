@@ -23,7 +23,7 @@
     });
     altNodes.forEach(function (el) { el.setAttribute('alt', next === 'en' ? el.dataset.enAlt : el.dataset.itAlt); });
     labelNodes.forEach(function (el) { el.setAttribute('aria-label', next === 'en' ? el.dataset.enLabel : el.dataset.itLabel); });
-    btn.textContent = next === 'en' ? 'IT' : 'EN';
+    btn.innerHTML = '<span class="lang-opt' + (next === 'it' ? ' is-on' : '') + '">IT</span><span class="lang-opt' + (next === 'en' ? ' is-on' : '') + '">EN</span>';
     btn.setAttribute('aria-label', next === 'en' ? 'Passa all\'italiano' : 'Switch to English');
     document.dispatchEvent(new Event('langchange'));
     try { localStorage.setItem('lang', next); } catch (e) {}
