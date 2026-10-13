@@ -109,7 +109,7 @@ h3 { font-family: var(--display); font-weight: 700; font-size: 24px; line-height
 .years { font-weight: 600; color: var(--accent); padding-top: 2px; }
 
 .about-grid { display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr); gap: clamp(24px, 5vw, 64px); align-items: start; }
-.portrait { width: 100%; height: auto; aspect-ratio: 359 / 400; object-fit: cover; }
+.portrait { width: 100%; height: auto; aspect-ratio: 808 / 904; object-fit: cover; border-radius: 4px; }
 .about-lead { font-family: var(--display); font-weight: 600; font-size: clamp(22px, 2.6vw, 30px); line-height: 1.25; margin: 0 0 16px; max-width: 22em; }
 .facts { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 10px 24px; margin: 32px 0 0; }
 .facts dt { font-weight: 600; }
