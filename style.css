@@ -609,3 +609,5 @@ h3 { font-weight: 750; letter-spacing: -0.02em; }
 @keyframes wof-pop { from { transform: scale(.6); } to { transform: none; } }
 .wof-confetti { position: fixed; inset: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 60; display: none; }
 .wof-confetti.on { display: block; }
+
+@media (max-width: 760px) { .cat-marks { display: none; } }
