@@ -158,3 +158,11 @@
 .vt .hz-dot { left: -50px; transform: none; }
 .vt .hz-key .hz-dot { left: -53px; }
 .vt .hz-viewport, .vt .hz-sticky { overflow: visible; }
+
+/* Software icons in "I miei strumenti" */
+.tool-icons { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px 8px; max-width: 420px; }
+.tool-icons li { display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; }
+.tool-icons img { display: block; width: 40px; height: 40px; object-fit: contain; transition: transform .25s cubic-bezier(.2,1.6,.4,1); }
+.tool-icons li:hover img { transform: translateY(-3px) rotate(-4deg); }
+.tool-icons span { font-size: 12.5px; line-height: 1.2; color: var(--grey); }
+.tool-more { margin: 10px 0 0 !important; font-size: 15px; }
