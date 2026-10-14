@@ -108,7 +108,7 @@ h3 { font-family: var(--display); font-weight: 700; font-size: 24px; line-height
 .timeline h3 { margin: 0 0 4px; font-size: 20px; }
 .timeline p { margin: 0; color: var(--grey); max-width: 40em; }
 .years { justify-self: start; align-self: start; font-size: 13px; font-weight: 700; color: var(--accent); border: 1.5px solid var(--accent); border-radius: 999px; padding: 2px 10px; white-space: nowrap; }
-.years.now { background: var(--accent); color: #fff; }
+.years.now { background: var(--accent); color: var(--on-acc, #fff); }
 .timeline .org { color: var(--accent); font-weight: 600; margin: 0 0 4px; }
 
 .about-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(24px, 5vw, 64px); align-items: start; }
@@ -159,7 +159,7 @@ h3 { font-family: var(--display); font-weight: 700; font-size: 24px; line-height
 /* Video teaser button and modal */
 .play-btn {
   display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 22px 0 18px;
-  font: 700 15px var(--body); color: #fff; background: var(--accent); border: 0; border-radius: 999px; cursor: pointer;
+  font: 700 15px var(--body); color: var(--on-acc, #fff); background: var(--accent); border: 0; border-radius: 999px; cursor: pointer;
 }
 .play-btn:hover { filter: brightness(1.1); }
 .video-modal { padding: 0; border: 0; background: transparent; width: min(1100px, 94vw); max-width: none; overflow: visible; }
@@ -225,7 +225,7 @@ html.lenis, html.lenis body { height: auto; }
 .marquee-track > span { display: inline-flex; align-items: center; gap: 28px; padding-right: 28px; font-family: var(--display); font-size: clamp(26px, 4vw, 52px); line-height: 1; }
 .marquee .dot { width: .38em; height: .38em; border-radius: 50%; display: inline-block; flex: none; }
 .motion-off .marquee-track { transform: none !important; }
-.marquee-vd { background: var(--accent); color: #fff; margin-block: clamp(24px, 4vw, 48px) 0; }
+.marquee-vd { background: var(--accent); color: var(--on-acc, #fff); margin-block: clamp(24px, 4vw, 48px) 0; }
 .marquee-vd b { font-weight: 600; letter-spacing: -0.02em; }
 .marquee-vd .dot { background: currentColor; width: .22em; height: .22em; }
 @media (prefers-color-scheme: dark) { .marquee-vd { color: #1A161C; } }
@@ -601,7 +601,7 @@ h3 { font-weight: 750; letter-spacing: -0.02em; }
 .wof-wheel { width: 100%; height: 100%; display: block; filter: drop-shadow(0 14px 26px rgba(0,0,0,.3)); }
 .wof-lbl { font: 800 10px var(--display); letter-spacing: .02em; }
 .wof-pin { position: absolute; top: -10px; left: 50%; z-index: 2; width: 0; height: 0; transform: translateX(-50%); border-left: 14px solid transparent; border-right: 14px solid transparent; border-top: 26px solid #FFE14D; filter: drop-shadow(0 3px 3px rgba(0,0,0,.35)); }
-.wof-spin { position: absolute; left: 50%; top: 50%; width: 26%; aspect-ratio: 1; transform: translate(-50%, -50%); border-radius: 50%; border: 4px solid var(--paper); background: var(--accent); color: #fff; font: 900 15px var(--display); letter-spacing: .04em; cursor: pointer; box-shadow: 0 6px 16px rgba(0,0,0,.35); transition: transform .2s ease; }
+.wof-spin { position: absolute; left: 50%; top: 50%; width: 26%; aspect-ratio: 1; transform: translate(-50%, -50%); border-radius: 50%; border: 4px solid var(--paper); background: var(--accent); color: var(--on-acc, #fff); font: 900 15px var(--display); letter-spacing: .04em; cursor: pointer; box-shadow: 0 6px 16px rgba(0,0,0,.35); transition: transform .2s ease; }
 .wof-spin:hover { transform: translate(-50%, -50%) scale(1.08); }
 .wof-spin:focus-visible { outline: 3px solid #FFE14D; outline-offset: 3px; }
 .wof-result { min-height: 3em; margin: 18px auto 0; max-width: 24em; font-weight: 600; font-size: 17px; }
@@ -611,3 +611,9 @@ h3 { font-weight: 750; letter-spacing: -0.02em; }
 .wof-confetti.on { display: block; }
 
 @media (max-width: 760px) { .cat-marks { display: none; } }
+
+/* Dark mode: the accent turns light lavender, so text sitting on it turns dark */
+@media (prefers-color-scheme: dark) {
+  :root { --on-acc: #1A161C; }
+  .pin-hint, .now, .years.now, .wof-spin, .play-btn, .contact .btn-solid:hover { color: #1A161C; }
+}

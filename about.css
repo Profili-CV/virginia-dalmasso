@@ -100,7 +100,7 @@
 /* Education */
 .edu-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
 .edu-grid article { padding: 28px; border-radius: 8px; border: 2px solid var(--rule); }
-.edu-year { display: inline-block; padding: 4px 12px; border-radius: 99px; background: var(--accent); color: #fff; font-weight: 700; font-size: 14px; }
+.edu-year { display: inline-block; padding: 4px 12px; border-radius: 99px; background: var(--accent); color: var(--on-acc, #fff); font-weight: 700; font-size: 14px; }
 .edu-grid h3 { margin: 14px 0 4px; font-family: var(--display); font-size: 22px; }
 .edu-where { margin: 0 0 10px; color: var(--accent); font-weight: 600; }
 .edu-grid p:last-child { margin: 0; }
@@ -127,7 +127,7 @@
 .hz-fill { display: block; height: 100%; width: 0; background: var(--accent); }
 .hz.is-pinned .hz-line { left: max(var(--gutter), calc((100vw - var(--max)) / 2 + var(--gutter))); }
 .hz-year { margin: 0; font-family: var(--display); font-weight: 900; font-size: clamp(40px, 4.6vw, 64px); line-height: 1; letter-spacing: -0.04em; color: var(--accent); }
-.hz-meet { display: inline-block; margin: 12px 0 0; padding: 6px 12px; border-radius: 999px; background: var(--accent); color: #fff; font-weight: 700; font-size: 14px; }
+.hz-meet { display: inline-block; margin: 12px 0 0; padding: 6px 12px; border-radius: 999px; background: var(--accent); color: var(--on-acc, #fff); font-weight: 700; font-size: 14px; }
 .hz-kind { margin: 14px 0 0; font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--grey); }
 .hz-pt h3 { margin: 4px 0 2px; font-family: var(--display); font-size: 22px; line-height: 1.15; }
 .hz-where { margin: 0 0 8px; color: var(--accent); font-weight: 600; font-size: 15px; }
@@ -166,3 +166,6 @@
 .tool-icons li:hover img { transform: translateY(-3px) rotate(-4deg); }
 .tool-icons span { font-size: 12.5px; line-height: 1.2; color: var(--grey); }
 .tool-more { margin: 10px 0 0 !important; font-size: 15px; }
+@media (prefers-color-scheme: dark) {
+  .ab-grid li.s1, .ab-grid li.s4, .edu-year, .hz-meet { color: #1A161C; }
+}
