@@ -12,7 +12,7 @@
   function update() {
     var r = track.getBoundingClientRect(), vh = window.innerHeight;
     var p = Math.max(0, Math.min(1, (vh * 0.75 - r.top) / r.height));
-    fill.style.height = (p * 100) + '%';
+    fill.style.transform = 'scaleY(' + p + ')';
   }
   var t = false;
   window.addEventListener('scroll', function () { if (t) return; t = true; requestAnimationFrame(function () { update(); t = false; }); }, { passive: true });

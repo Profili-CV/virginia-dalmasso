@@ -30,7 +30,7 @@
 .ab-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
 .ab-grid li { padding: 26px 24px; border-radius: 8px; background: var(--c); color: #fff; min-height: 180px; display: flex; flex-direction: column; justify-content: flex-end; transition: transform .3s ease; }
 .ab-grid li:nth-child(3) { color: #17171C; }
-.ab-grid li:hover { transform: translateY(-4px) rotate(-.4deg); }
+@media (hover: hover) and (pointer: fine) { .ab-grid li:hover { transform: translateY(-4px) rotate(-.4deg); } }
 .ab-grid h3 { margin: 0 0 8px; font-family: var(--display); font-size: 22px; line-height: 1.15; }
 .ab-grid p { margin: 0; font-size: 15px; line-height: 1.5; opacity: .92; }
 
@@ -73,7 +73,7 @@
 .ab-grid li:nth-child(3) { color: #26202A; }
 .ab-intro em, .ab-end-big em { color: var(--accent); font-style: italic; }
 .btn-big { display: inline-flex; align-items: center; gap: 12px; min-height: 56px; padding: 0 26px; border-radius: 999px; font: 600 17px var(--body); text-decoration: none; transition: transform .25s ease, background .25s ease, color .25s ease, border-color .25s ease; }
-.btn-big:hover { transform: translateY(-2px); }
+@media (hover: hover) and (pointer: fine) { .btn-big:hover { transform: translateY(-2px); } }
 .btn-solid { background: var(--ink); color: var(--paper); border: 2px solid var(--ink); }
 .btn-solid:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
 .btn-line { border: 2px solid var(--ink); color: var(--ink); }
@@ -89,7 +89,7 @@
 .sheet-p::before { content: ""; position: absolute; top: -12px; left: 50%; width: 90px; height: 24px; transform: translateX(-50%) rotate(-3deg); background: color-mix(in srgb, var(--accent) 35%, rgba(255,255,255,.6)); opacity: .85; }
 .sheet-p img { display: block; width: 100%; height: auto; pointer-events: auto; }
 .sheet-p figcaption { position: absolute; left: 12px; right: 12px; bottom: 9px; font-size: 13px; color: #555; font-style: italic; }
-.sheet-p:hover { box-shadow: 0 22px 40px rgba(30, 20, 45, .3); transform: translate(var(--dx, 0), var(--dy, 0)) rotate(0deg) scale(1.02); }
+@media (hover: hover) and (pointer: fine) { .sheet-p:hover { box-shadow: 0 22px 40px rgba(30, 20, 45, .3); transform: translate(var(--dx, 0), var(--dy, 0)) rotate(0deg) scale(1.02); } }
 .sheet-p.is-held { cursor: grabbing; transition: box-shadow .25s ease; transform: translate(var(--dx, 0), var(--dy, 0)) rotate(0deg) scale(1.05); box-shadow: 0 30px 50px rgba(30, 20, 45, .35); }
 @media (max-width: 760px) {
   .sheets { height: auto; display: grid; gap: 22px; }
@@ -146,7 +146,7 @@
 .vt .hz-viewport { position: relative; padding: 0; }
 .vt .hz-track { position: relative; display: block; width: auto; padding: 0 0 0 56px; transform: none !important; }
 .vt .hz-line { top: 0; bottom: 0; left: 15px; right: auto; width: 3px; height: auto; border-radius: 2px; }
-.vt .hz-fill { width: 100% !important; height: 0; transition: height .15s linear; }
+.vt .hz-fill { width: 100% !important; height: 100%; transform: scaleY(0); transform-origin: 50% 0; transition: transform .15s linear; }
 .vt .hz-pt { width: auto; padding: 0 0 clamp(36px, 5vw, 56px); opacity: .25; transform: translateX(24px); }
 .vt .hz-pt.on { opacity: 1; transform: none; }
 .vt .hz-dot { left: -56px; top: 10px; transform: translateX(6px); }
@@ -163,7 +163,7 @@
 .tool-icons { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px 8px; max-width: 420px; }
 .tool-icons li { display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; }
 .tool-icons img { display: block; width: 40px; height: 40px; object-fit: contain; transition: transform .25s cubic-bezier(.2,1.6,.4,1); }
-.tool-icons li:hover img { transform: translateY(-3px) rotate(-4deg); }
+@media (hover: hover) and (pointer: fine) { .tool-icons li:hover img { transform: translateY(-3px) rotate(-4deg); } }
 .tool-icons span { font-size: 12.5px; line-height: 1.2; color: var(--grey); }
 .tool-more { margin: 10px 0 0 !important; font-size: 15px; }
 @media (prefers-color-scheme: dark) {
