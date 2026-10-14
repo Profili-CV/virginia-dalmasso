@@ -15,7 +15,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="fonts/inter-tight.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="style.css?v=46">
+<link rel="stylesheet" href="style.css?v=48">
 <script>try{if(!sessionStorage.getItem("pl-seen"))document.documentElement.classList.add("pl-on")}catch(e){document.documentElement.classList.add("pl-on")}</script>
 </head>
 <body>
@@ -227,6 +227,16 @@
           <a class="btn-big btn-line" href="cv-virginia-dalmasso.pdf" download><span data-en="Download CV">Scarica il CV</span> <span aria-hidden="true">↓</span></a>
         </div>
       </div>
+      <div class="wof">
+        <p class="wof-title" data-en="Spin the wheel of fortune">Gira la ruota della fortuna</p>
+        <div class="wof-box">
+          <span class="wof-pin" aria-hidden="true"></span>
+          <svg class="wof-wheel" viewBox="-100 -100 200 200" aria-hidden="true"></svg>
+          <button type="button" class="wof-spin" data-en="SPIN">GIRA</button>
+        </div>
+        <p class="wof-result" aria-live="polite" data-en="Nothing real to win, only a laugh.">Niente di vero da vincere, solo una risata.</p>
+        <canvas class="wof-confetti" aria-hidden="true"></canvas>
+      </div>
     </div>
   </section>
 
@@ -284,6 +294,7 @@
 <script src="book.js?v=2"></script>
 <script src="cat.js?v=3"></script>
 <script src="pin.js?v=1"></script>
+<script src="wheel.js?v=2"></script>
 <script src="preloader.js?v=1"></script>
 <script src="cursor.js?v=2"></script>
 </body>
