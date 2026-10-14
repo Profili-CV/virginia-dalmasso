@@ -15,7 +15,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="fonts/inter-tight.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="style.css?v=44">
+<link rel="stylesheet" href="style.css?v=46">
 <script>try{if(!sessionStorage.getItem("pl-seen"))document.documentElement.classList.add("pl-on")}catch(e){document.documentElement.classList.add("pl-on")}</script>
 </head>
 <body>
@@ -54,13 +54,21 @@
       </p>
     </div>
     <div class="hero-photo">
-      <img class="portrait" src="img/ritratto.jpg" alt="Virginia Dalmasso" width="808" height="904">
+      <div class="pin-photo" id="pin-photo">
+        <span class="pin-tape" data-cursor="Stacca" data-cursor-en="Peel off" title="Trascina per staccare la foto"></span>
+        <img class="portrait" src="img/ritratto.jpg" alt="Virginia Dalmasso" width="808" height="904">
+        <canvas class="pin-draw" aria-label="Disegna sulla foto" data-en-label="Draw on the photo"></canvas>
+      </div>
+      <div class="pin-tools">
+        <span class="pin-hint" data-en="Draw on me ✎">Disegnami sopra ✎</span>
+        <button type="button" class="pin-clear" data-en="Clear">Cancella</button>
+      </div>
       <a class="seal" href="#contatti" aria-label="Contattami" data-en-label="Contact me">
         <svg viewBox="0 0 200 200" width="100" height="100" aria-hidden="true" focusable="false">
           <defs><path id="seal-path" d="M100,100 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0"/></defs>
           <circle cx="100" cy="100" r="98" class="seal-bg"/>
           <g class="seal-ring"><text><textPath href="#seal-path" startOffset="0" textLength="470" lengthAdjust="spacing">THINK BIG · COMMUNICATION DESIGN · TORINO ·</textPath></text></g>
-          <text x="100" y="114" text-anchor="middle" class="seal-mid">VD</text>
+          <image href="img/vd-monogramma.svg" x="56" y="69" width="88" height="62" class="seal-mono"/>
         </svg>
       </a>
     </div>
@@ -115,11 +123,14 @@
       </article>
 
       <article class="card-w">
-        <a class="cw-media ph-link" href="momento.html" data-cursor="Vedi progetto" data-cursor-en="View project"><img class="no-zoom" src="img/momento.jpg" alt="Key visual di MOMENTO: una figura sfocata dietro un vetro, con il logo" data-en-alt="MOMENTO key visual: a blurred figure behind glass, with the logo" loading="lazy"></a>
-        <p class="kicker" data-en="Concept, brand identity, social and app · 2026">Concept, brand identity, social e app · 2026</p>
-        <h3><a href="momento.html" class="title-link">Momento</a></h3>
-        <p data-en="An immersive experience that simulates your own end so you can go back to living authentically. Name, logo, key visual, social, app and guerrilla.">Un'esperienza immersiva che simula la propria fine per tornare a vivere in modo autentico. Nome, logo, key visual, social, app e guerrilla.</p>
-        <p class="cw-link"><a href="momento.html" data-en="The project →">Il progetto →</a></p>
+        <a class="cw-media poster-stage" href="poster.html" data-cursor="Apri" data-cursor-en="Open">
+          <span class="ps-fold" aria-hidden="true"><span class="ps-front" style="background-image:url(img/poster/cover.jpg)"></span></span>
+          <span class="sr-only" data-en="Open the Punk poster">Apri il poster Punk</span>
+        </a>
+        <p class="kicker" data-en="Editorial · folded poster · 2020">Editoriale · poster piegato · 2020</p>
+        <h3><a href="poster.html" class="title-link" data-en="Punk is inside you">Punk is inside you</a></h3>
+        <p data-en="A poster-magazine on punk today, between fashion, music and attitude: a cover that unfolds into four pages of articles, and a full-size poster on the back.">Un poster-rivista sul punk oggi, tra moda, musica e attitudine: una copertina che si apre in quattro pagine di articoli, e sul retro un poster a tutta pagina.</p>
+        <p class="cw-link"><a href="poster.html" data-en="Unfold it →">Aprilo →</a></p>
       </article>
 
       <article class="card-w">
@@ -139,6 +150,22 @@
       </article>
 
       <article class="card-w">
+        <a class="cw-media" href="https://www.chicomfactory.com/" target="_blank" rel="noopener" data-cursor="Visita" data-cursor-en="Visit"><img class="no-zoom" src="img/chicom-landing.jpg" alt="Landing page C_Stations di CHICOM: Ordine più Pulizia uguale Più Sicurezza" data-en-alt="CHICOM C_Stations landing page: Order plus Cleaning equals More Safety" loading="lazy"></a>
+        <p class="kicker">Landing page · CHICOM</p>
+        <h3>C_Stations</h3>
+        <p data-en="Landing page for CHICOM's 5S cleaning stations: from “Order + Cleaning = More Safety” to testimonials and the request for a quote.">Landing page per le stazioni di pulizia 5S di CHICOM: da “Ordine + Pulizia = Più Sicurezza” alle testimonianze, fino alla richiesta d'offerta.</p>
+        <p class="cw-link"><a href="https://www.chicomfactory.com/" target="_blank" rel="noopener" data-en="Visit the landing page ↗">Visita la landing page ↗</a></p>
+      </article>
+
+      <article class="card-w half">
+        <a class="cw-media ph-link" href="momento.html" data-cursor="Vedi progetto" data-cursor-en="View project"><img class="no-zoom" src="img/momento.jpg" alt="Key visual di MOMENTO: una figura sfocata dietro un vetro, con il logo" data-en-alt="MOMENTO key visual: a blurred figure behind glass, with the logo" loading="lazy"></a>
+        <p class="kicker" data-en="Concept, brand identity, social and app · 2026">Concept, brand identity, social e app · 2026</p>
+        <h3><a href="momento.html" class="title-link">Momento</a></h3>
+        <p data-en="An immersive experience that simulates your own end so you can go back to living authentically. Name, logo, key visual, social, app and guerrilla.">Un'esperienza immersiva che simula la propria fine per tornare a vivere in modo autentico. Nome, logo, key visual, social, app e guerrilla.</p>
+        <p class="cw-link"><a href="momento.html" data-en="The project →">Il progetto →</a></p>
+      </article>
+
+      <article class="card-w half">
         <div class="cw-media logos-mini">
           <span class="lm tile-dark"><img src="img/logo-healthy-strong.png" alt="Logo Healthy &amp; Strong" loading="lazy"></span>
           <span class="lm tile-cream"><img src="img/logo-marziano-romina.png" alt="Logo Marziano Romina" loading="lazy"></span>
@@ -148,16 +175,6 @@
         <h3 data-en="Logos">Loghi</h3>
         <p data-en="A personal trainer, a lash maker and PMU artist, a tattoo studio: each mark has its own character.">Un personal trainer, una lashmaker e PMU artist, uno studio di tatuaggi: ogni marchio con il suo carattere.</p>
         <p class="cw-link"><a href="https://www.instagram.com/_healthystrong_/" target="_blank" rel="noopener">Healthy &amp; Strong ↗</a> <a href="https://www.instagram.com/_ritual.tattoo_/" target="_blank" rel="noopener">Ritual Tattoo ↗</a></p>
-      </article>
-
-      <article class="card-w full">
-        <a class="cw-media" href="https://www.chicomfactory.com/" target="_blank" rel="noopener" data-cursor="Visita" data-cursor-en="Visit"><img class="no-zoom" src="img/chicom-landing.jpg" alt="Landing page C_Stations di CHICOM: Ordine più Pulizia uguale Più Sicurezza" data-en-alt="CHICOM C_Stations landing page: Order plus Cleaning equals More Safety" loading="lazy"></a>
-        <div class="cw-text">
-          <p class="kicker">Landing page · CHICOM</p>
-          <h3>C_Stations</h3>
-          <p data-en="A landing page for C_Stations, CHICOM's 5S cleaning stations for factories: from the message “Order + Cleaning = More Safety” to customer testimonials and the request for a quote.">Landing page per C_Stations, le stazioni di pulizia 5S di CHICOM per i reparti produttivi: dal messaggio “Ordine + Pulizia = Più Sicurezza” alle testimonianze dei clienti, fino alla richiesta d'offerta.</p>
-          <p class="cw-link"><a href="https://www.chicomfactory.com/" target="_blank" rel="noopener" data-en="Visit the landing page ↗">Visita la landing page ↗</a></p>
-        </div>
       </article>
     </div>
   </section>
@@ -266,6 +283,7 @@
 <script src="nav-active.js?v=1"></script>
 <script src="book.js?v=2"></script>
 <script src="cat.js?v=3"></script>
+<script src="pin.js?v=1"></script>
 <script src="preloader.js?v=1"></script>
 <script src="cursor.js?v=2"></script>
 </body>

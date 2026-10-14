@@ -140,3 +140,21 @@
   .hz-line { right: auto; width: 100%; }
 }
 .hz-year { white-space: nowrap; font-size: clamp(34px, 3.6vw, 52px); }
+
+/* Vertical path */
+.ab-page > section.vt { max-width: 980px; }
+.vt .hz-viewport { position: relative; padding: 0; }
+.vt .hz-track { position: relative; display: block; width: auto; padding: 0 0 0 56px; transform: none !important; }
+.vt .hz-line { top: 0; bottom: 0; left: 15px; right: auto; width: 3px; height: auto; border-radius: 2px; }
+.vt .hz-fill { width: 100% !important; height: 0; transition: height .15s linear; }
+.vt .hz-pt { width: auto; padding: 0 0 clamp(36px, 5vw, 56px); opacity: .25; transform: translateX(24px); }
+.vt .hz-pt.on { opacity: 1; transform: none; }
+.vt .hz-dot { left: -56px; top: 10px; transform: translateX(6px); }
+.vt .hz-key { padding: 24px 26px; margin: 0 0 clamp(36px, 5vw, 56px); }
+.vt .hz-key .hz-dot { left: -60px; top: 22px; }
+.vt .hz-text { max-width: 40em; font-size: 17px; }
+.vt .hz-year { font-size: clamp(36px, 5vw, 60px); }
+@media (prefers-reduced-motion: reduce) { .vt .hz-pt { opacity: 1; transform: none; transition: none; } }
+.vt .hz-dot { left: -50px; transform: none; }
+.vt .hz-key .hz-dot { left: -53px; }
+.vt .hz-viewport, .vt .hz-sticky { overflow: visible; }

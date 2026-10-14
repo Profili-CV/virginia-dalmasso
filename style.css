@@ -558,3 +558,37 @@ h3 { font-weight: 750; letter-spacing: -0.02em; }
 .cat-mark { width: clamp(30px, 3.6vw, 48px); }
 .cat-mark path { stroke-width: 3; }
 .cat-mark.on { opacity: .9; }
+
+/* Hero photo: peel and draw */
+.pin-photo { position: relative; transform: translate(var(--dx, 0), var(--dy, 0)) rotate(var(--rot, 0deg)); transform-origin: 50% 0; transition: transform .6s cubic-bezier(.2,1.6,.4,1), box-shadow .3s ease; z-index: 3; }
+.pin-photo:hover { transform: translate(var(--dx, 0), var(--dy, 0)) rotate(-1.5deg); }
+.pin-photo.is-held { transition: box-shadow .3s ease; box-shadow: 0 34px 60px rgba(20,10,30,.45); }
+.pin-photo.is-held .portrait { box-shadow: none; }
+.pin-photo.stick { animation: pin-stick .5s ease; }
+@keyframes pin-stick { 0% { filter: brightness(1.15); } 100% { filter: none; } }
+.pin-tape { position: absolute; top: -14px; left: 50%; z-index: 4; width: 110px; height: 30px; transform: translateX(-50%) rotate(-3deg); background: rgba(255,255,255,.55); box-shadow: 0 2px 6px rgba(0,0,0,.15); backdrop-filter: blur(2px); cursor: grab; touch-action: none; }
+.pin-tape::before, .pin-tape::after { content: ""; position: absolute; top: 0; bottom: 0; width: 6px; background: repeating-linear-gradient(180deg, transparent 0 4px, rgba(0,0,0,.08) 4px 6px); }
+.pin-tape::before { left: 0; } .pin-tape::after { right: 0; }
+.pin-photo.is-held .pin-tape { cursor: grabbing; }
+.pin-draw { position: absolute; inset: 0; width: 100%; height: 100%; border-radius: 4px; cursor: crosshair; touch-action: none; }
+.has-cursor .pin-draw { cursor: crosshair; }
+.pin-tools { position: absolute; right: clamp(20px, 3vw, 36px); bottom: 6px; display: flex; align-items: center; gap: 10px; color: #fff; font-size: 13px; font-weight: 600; }
+.pin-clear { display: none; padding: 4px 12px; border-radius: 99px; border: 1.5px solid #fff; background: none; color: #fff; font: 600 13px var(--body); cursor: pointer; }
+.has-drawing .pin-clear { display: inline-block; }
+.seal .seal-mono { pointer-events: none; }
+@media (prefers-reduced-motion: reduce) { .pin-photo { transition: none; } }
+
+/* Works grid: rows of three, last row of two */
+.cards { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+.cards > .card-w { grid-column: span 2; }
+.cards > .card-w.half { grid-column: span 3; }
+.card-w.half .cw-media { aspect-ratio: 16 / 9; }
+@media (max-width: 960px) { .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } .cards > .card-w, .cards > .card-w.half { grid-column: auto; } .card-w.half .cw-media { aspect-ratio: 4 / 3; } }
+@media (max-width: 560px) { .cards { grid-template-columns: minmax(0, 1fr); } }
+
+/* Poster card: the folded cover opens a little on hover */
+.poster-stage { background: radial-gradient(circle at 50% 40%, #2a2430, #0E0C10); display: grid; place-items: center; perspective: 1200px; }
+.ps-fold { position: relative; width: 38%; aspect-ratio: 760 / 1075; box-shadow: 14px 18px 26px rgba(0,0,0,.5); transform: rotate(-4deg); transition: transform .5s ease; }
+.ps-front { position: absolute; inset: 0; background-size: cover; transform-origin: right center; transition: transform .6s cubic-bezier(.2,.8,.2,1); }
+.poster-stage:hover .ps-fold { transform: rotate(0) scale(1.05); }
+.poster-stage:hover .ps-front { transform: perspective(900px) rotateY(18deg); }
