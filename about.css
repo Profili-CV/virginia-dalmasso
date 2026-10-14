@@ -69,7 +69,7 @@
 .ab-chapters article:nth-child(5) { grid-column: auto; }
 .ab-grid li { background: var(--accent); }
 .ab-grid li.s2, .ab-grid li.s5 { background: #26202A; }
-.ab-grid li.s3, .ab-grid li.s6 { background: #F6EEF3; color: #26202A; }
+.ab-grid li.s3, .ab-grid li.s6 { background: #F1ECF8; color: #26202A; }
 .ab-grid li:nth-child(3) { color: #26202A; }
 .ab-intro em, .ab-end-big em { color: var(--accent); font-style: italic; }
 .btn-big { display: inline-flex; align-items: center; gap: 12px; min-height: 56px; padding: 0 26px; border-radius: 999px; font: 600 17px var(--body); text-decoration: none; transition: transform .25s ease, background .25s ease, color .25s ease, border-color .25s ease; }
