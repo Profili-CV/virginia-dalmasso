@@ -711,3 +711,95 @@ html { scrollbar-color: color-mix(in srgb, var(--ink) 35%, transparent) transpar
 .pfx-sand i { width: 4px; height: 4px; }
 .cs-hero.pfx-box { overflow-x: clip; }
 html, body { overflow-x: clip; }
+
+/* Phone menu (burger) */
+.burger { display: none; }
+@media (max-width: 760px) {
+  .nav { flex-wrap: nowrap; gap: 10px; padding-top: 10px; padding-bottom: 10px; }
+  .burger { display: inline-grid; align-content: center; justify-items: center; gap: 5px; width: 44px; height: 44px; padding: 0; border: 2px solid var(--ink); border-radius: 50%; background: transparent; color: var(--ink); cursor: pointer; flex: none; }
+  .burger span { display: block; width: 18px; height: 2px; border-radius: 2px; background: currentColor; transition: transform .35s cubic-bezier(.2,.8,.2,1), opacity .2s ease; }
+  .menu-open .burger { background: var(--ink); color: var(--paper); }
+  .menu-open .burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .menu-open .burger span:nth-child(2) { opacity: 0; }
+  .menu-open .burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .nav nav {
+    position: absolute; left: 0; right: 0; top: 100%; width: auto; order: 0;
+    height: calc(100vh - 100%); height: calc(100dvh - 100%); overflow-y: auto;
+    display: flex; flex-direction: column; flex-wrap: nowrap; gap: 0;
+    padding: 12px var(--gutter) 40px; background: var(--paper); border-top: 1px solid var(--rule);
+    opacity: 0; visibility: hidden; transform: translateY(-8px);
+    transition: opacity .3s ease, transform .35s cubic-bezier(.2,.8,.2,1), visibility 0s linear .35s;
+  }
+  .menu-open nav { opacity: 1; visibility: visible; transform: none; transition: opacity .3s ease, transform .35s cubic-bezier(.2,.8,.2,1); }
+  .nav nav a { display: flex; align-items: center; gap: 16px; padding: 16px 0; margin-block: 0; border-bottom: 1px solid var(--rule); font-family: var(--display); font-weight: 700; font-size: clamp(30px, 9vw, 40px); line-height: 1.05; letter-spacing: -0.02em; }
+  .nav nav a::before { content: ""; flex: none; width: 14px; height: 14px; border-radius: 50%; background: var(--c, var(--accent)); }
+  .nav nav a::after { display: none; }
+  .nav nav a:nth-child(1) { --c: var(--accent); }
+  .nav nav a:nth-child(2) { --c: color-mix(in srgb, var(--accent) 78%, var(--paper)); }
+  .nav nav a:nth-child(3) { --c: color-mix(in srgb, var(--accent) 56%, var(--paper)); }
+  .nav nav a:nth-child(4) { --c: color-mix(in srgb, var(--accent) 36%, var(--paper)); }
+  .menu-open nav a { animation: menu-in .45s cubic-bezier(.2,.8,.2,1) both; }
+  .menu-open nav a:nth-child(2) { animation-delay: .04s; } .menu-open nav a:nth-child(3) { animation-delay: .08s; } .menu-open nav a:nth-child(4) { animation-delay: .12s; }
+  html.menu-lock, html.menu-lock body { overflow: hidden; }
+  main [id] { scroll-margin-top: 76px; }
+}
+@keyframes menu-in { from { opacity: 0; transform: translateX(-14px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .menu-open nav a { animation: none; } .nav nav, .burger span { transition: none; } }
+
+/* Experience: the key sentences light up in yellow as you scroll past them */
+.hl { --p: 0; background-image: linear-gradient(#FFE45C, #FFE45C); background-repeat: no-repeat; background-position: 0 85%; background-size: calc(var(--p) * 100%) 88%; -webkit-box-decoration-break: clone; box-decoration-break: clone; padding: 0 .12em; margin: 0 -.12em; color: color-mix(in srgb, var(--ink) calc(var(--p) * 100%), var(--grey)); }
+@media (prefers-color-scheme: dark) {
+  .hl { background-image: none; color: color-mix(in srgb, #FFD84D calc(var(--p) * 100%), var(--grey)); text-shadow: 0 0 calc(var(--p) * 14px) rgba(255, 216, 77, calc(var(--p) * .35)); }
+}
+
+/* Kasabian: the disc slides out on phones too, and spins while the album plays */
+.cd-stage.cd-out .cd { transform: translateX(-22%); }
+.cd-stage.cd-out .cd-disc { transform: translateX(46%) rotate(200deg); }
+.cd-stage.spinning .cd { transform: translateX(-22%); }
+.cd-stage.spinning .cd-disc { animation: cd-spin 2.4s linear infinite; }
+@keyframes cd-spin { from { transform: translateX(46%) rotate(0deg); } to { transform: translateX(46%) rotate(360deg); } }
+.listen { display: grid; gap: 10px; margin-top: 14px; }
+.listen-btn { justify-self: start; display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 18px 0 6px; border: 1.5px solid var(--ink); border-radius: 999px; background: transparent; color: var(--ink); font: 600 15px var(--body); cursor: pointer; transition: background .2s ease, color .2s ease; }
+.listen-ico { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: #1DB954; color: #0b0b0b; }
+.listen-ico .i-close, .listen-btn[aria-expanded="true"] .i-play { display: none; }
+.listen-btn[aria-expanded="true"] .i-close { display: inline; }
+@media (hover: hover) and (pointer: fine) { .listen-btn:hover { background: var(--ink); color: var(--paper); } }
+.listen-btn:active { transform: scale(.97); }
+.listen-note { margin: 0; font-size: 13px; color: var(--grey); }
+.listen-player iframe { display: block; width: 100%; height: 152px; border: 0; border-radius: 12px; }
+@media (prefers-reduced-motion: reduce) { .cd-stage.spinning .cd-disc { animation: none; transform: translateX(46%) rotate(200deg); } }
+.listen-btn .l-close, .listen-btn[aria-expanded="true"] .l-open { display: none; }
+.listen-btn[aria-expanded="true"] .l-close { display: inline; }
+
+/* Olivetti: shop food floating around the logo */
+.pfx-food svg { display: block; width: 100%; height: auto; rotate: var(--r, 0deg); filter: drop-shadow(0 6px 10px rgba(0,0,0,.22)); animation: pfx-bob 3.2s ease-in-out infinite; animation-delay: var(--d, 0s); }
+@keyframes pfx-bob { 50% { transform: translateY(-6px) rotate(4deg); } }
+@media (prefers-reduced-motion: reduce) { .pfx-food svg { animation: none; } }
+
+/* Momento: on hover the image goes black and the green skull lights up */
+.mo-media { position: relative; overflow: hidden; }
+.mo-media img { transition: filter .5s ease, transform .8s cubic-bezier(.23,1,.32,1); }
+.mo-veil { position: absolute; inset: 0; z-index: 4; display: grid; place-content: center; justify-items: center; gap: 18px; background: rgba(0,0,0,.93); color: #19D3B4; opacity: 0; transition: opacity .45s ease; pointer-events: none; }
+.mo-skull { width: clamp(64px, 22%, 120px); height: auto; transform: scale(.86) translateY(6px); filter: drop-shadow(0 0 0 rgba(25,211,180,0)); transition: transform .6s cubic-bezier(.23,1,.32,1), filter .6s ease; }
+.mo-tag { font: 500 13px/1 ui-monospace, Menlo, monospace; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.75); opacity: 0; transform: translateY(6px); transition: opacity .4s ease .12s, transform .5s cubic-bezier(.23,1,.32,1) .12s; }
+.mo-media.mo-on .mo-veil { opacity: 1; }
+.mo-media.mo-on .mo-skull { transform: none; filter: drop-shadow(0 0 18px rgba(25,211,180,.55)); animation: mo-glow 2.6s ease-in-out .6s infinite; }
+.mo-media.mo-on .mo-tag { opacity: 1; transform: none; }
+.mo-media.mo-on img { filter: grayscale(1) contrast(1.1); transform: scale(1.03); }
+@media (hover: hover) and (pointer: fine) {
+  .mo-media:hover .mo-veil, .mo-media:focus-visible .mo-veil { opacity: 1; }
+  .mo-media:hover .mo-skull, .mo-media:focus-visible .mo-skull { transform: none; filter: drop-shadow(0 0 18px rgba(25,211,180,.55)); animation: mo-glow 2.6s ease-in-out .6s infinite; }
+  .mo-media:hover .mo-tag, .mo-media:focus-visible .mo-tag { opacity: 1; transform: none; }
+  .mo-media:hover img { filter: grayscale(1) contrast(1.1); transform: scale(1.03); }
+}
+@keyframes mo-glow { 50% { filter: drop-shadow(0 0 30px rgba(25,211,180,.85)); } }
+@media (prefers-reduced-motion: reduce) { .mo-skull, .mo-tag, .mo-media img { transition: opacity .2s ease; transform: none !important; animation: none !important; } }
+
+/* Logos: show they can be opened large */
+.logos-mini .lm { position: relative; cursor: zoom-in; }
+.logos-mini .lm img { transition: transform .45s cubic-bezier(.23,1,.32,1); }
+.lm-zoom { position: absolute; right: 8px; bottom: 8px; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: rgba(26,22,28,.78); color: #fff; pointer-events: none; transition: transform .3s cubic-bezier(.23,1,.32,1), background .2s ease; }
+@media (hover: hover) and (pointer: fine) {
+  .logos-mini .lm:hover img { transform: scale(1.08); }
+  .logos-mini .lm:hover .lm-zoom { transform: scale(1.12); background: var(--accent); }
+}

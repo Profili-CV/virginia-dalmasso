@@ -169,3 +169,39 @@
 @media (prefers-color-scheme: dark) {
   .ab-grid li.s1, .ab-grid li.s4, .edu-year, .hz-meet { color: #1A161C; }
 }
+
+/* Services: icon, tilt toward the pointer, and the projects where each service shows up */
+.ab-grid li.svc { position: relative; transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transition: transform .5s cubic-bezier(.23,1,.32,1), box-shadow .3s ease; outline: none; }
+.svc:focus-visible { box-shadow: 0 0 0 3px var(--paper), 0 0 0 5px var(--accent); }
+@media (hover: hover) and (pointer: fine) { .ab-grid li.svc:hover { transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(-4px); box-shadow: 0 24px 40px -24px rgba(38,32,42,.55); } }
+.svc-ico { position: absolute; top: 22px; left: 22px; display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; border: 1.5px solid currentColor; opacity: .95; }
+.svc-ico svg { width: 30px; height: 30px; }
+.svc-ico svg * { stroke-dasharray: 120; stroke-dashoffset: 0; }
+.svc:hover .svc-ico svg *, .svc.open .svc-ico svg *, .svc:focus-visible .svc-ico svg * { animation: svc-draw 1s cubic-bezier(.23,1,.32,1) both; }
+.svc-ico svg [stroke-dasharray="2 3"] { animation: none !important; stroke-dasharray: 2 3; }
+@keyframes svc-draw { from { stroke-dashoffset: 120; } to { stroke-dashoffset: 0; } }
+.ab-grid li.svc { min-height: 230px; padding-top: 96px; cursor: pointer; }
+.svc-works { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 0 !important; max-height: 0; overflow: hidden; opacity: 0; transition: max-height .45s cubic-bezier(.23,1,.32,1), opacity .3s ease, margin .3s ease; font-size: 13px !important; }
+.svc-works span { font-weight: 600; opacity: .8; margin-right: 2px; }
+.svc-works a { display: inline-flex; align-items: center; min-height: 32px; padding: 0 12px; border-radius: 999px; border: 1.5px solid currentColor; color: inherit; text-decoration: none; font-weight: 600; transition: background .2s ease, color .2s ease; }
+.svc-works a:hover { color: inherit; background: color-mix(in srgb, currentColor 18%, transparent); }
+.svc:hover .svc-works, .svc:focus-within .svc-works, .svc.open .svc-works { max-height: 140px; opacity: 1; margin-top: 14px !important; }
+@media (prefers-reduced-motion: reduce) { .svc { transform: none !important; transition: none; } .svc-ico svg * { animation: none !important; } .svc-works { transition: none; } }
+
+/* Numbers: count up when they come into view, the details build up with them */
+.nums .num { position: relative; cursor: default; gap: 10px; }
+.nums .num-n { font-variant-numeric: tabular-nums; display: inline-block; transition: transform .4s cubic-bezier(.23,1,.32,1); }
+.nums .num:hover .num-n { transform: scale(1.08) rotate(-3deg); }
+.num-l { font-size: 15px; color: var(--grey); font-weight: 600; }
+.num-viz { display: flex; flex-wrap: wrap; gap: 6px; min-height: 30px; align-items: center; }
+.num-bars i { width: 22px; height: 10px; border-radius: 3px; background: var(--accent); opacity: .18; transition: opacity .3s ease, transform .4s cubic-bezier(.23,1,.32,1); }
+.num-chips i { font-style: normal; font-size: 13px; font-weight: 600; padding: 5px 10px; border-radius: 999px; background: color-mix(in srgb, var(--accent) 14%, var(--paper)); color: var(--ink); opacity: 0; transform: translateY(6px); transition: opacity .3s ease, transform .4s cubic-bezier(.23,1,.32,1); }
+.num-viz .lit { opacity: 1 !important; transform: none !important; }
+.nums .num-big { font-family: var(--display); font-weight: 800; font-size: 22px; letter-spacing: -0.02em; color: var(--accent); text-transform: uppercase; transform-origin: left center; transform: scale(.7); opacity: .3; transition: transform .6s cubic-bezier(.2,1.6,.4,1), opacity .4s ease; }
+.num-motto.done .num-big, .num-motto:hover .num-big { transform: scale(1.25); opacity: 1; }
+.no-js-nums .num-chips i, .no-js-nums .num-bars i { opacity: 1; transform: none; }
+.ab-grid li.svc::after { content: "+"; position: absolute; top: 22px; right: 22px; display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; border: 1.5px solid currentColor; font: 600 20px/1 var(--body); transition: transform .35s cubic-bezier(.23,1,.32,1); }
+.ab-grid li.svc.open::after { transform: rotate(45deg); }
+@media (hover: hover) and (pointer: fine) { .ab-grid li.svc:hover::after { transform: rotate(45deg); } }
+.ab-grid .svc-works a { padding-block: 0; margin-block: 0; }
+.ab-grid li.svc .svc-works { padding: 2px 0; }

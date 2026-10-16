@@ -20,8 +20,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="fonts/inter-tight.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="style.css?v=57w">
-<link rel="stylesheet" href="collab.css?v=1">
+<link rel="stylesheet" href="style.css?v=58">
 <script>try{if(!sessionStorage.getItem("pl-seen"))document.documentElement.classList.add("pl-on")}catch(e){document.documentElement.classList.add("pl-on")}</script>
 </head>
 <body>
@@ -40,7 +39,6 @@
   <nav aria-label="Sezioni">
     <a href="#lavori" data-en="Work">Lavori</a>
     <a href="#esperienza" data-en="Experience">Esperienza</a>
-    <a href="#collaborazioni" data-en="Collaborations">Collaborazioni</a>
     <a href="#chi-sono" data-en="About">Chi sono</a>
     <a href="#contatti" data-en="Contact">Contatti</a>
   </nav>
@@ -101,7 +99,7 @@
     </article>
 
     <div class="cards">
-      <article data-fx="bwood" class="card-w">
+      <article id="bwood" data-fx="bwood" class="card-w">
         <button class="cw-media book-stage" type="button" data-book-open aria-haspopup="dialog" data-cursor="Sfoglia" data-cursor-en="Flip through">
           <span class="book3d" aria-hidden="true">
             <span class="book-inside" style="background-image:url(img/bwood/inside.webp)"></span>
@@ -116,7 +114,7 @@
         <p class="cw-link"><a href="bwood.html" data-en="The project →">Il progetto →</a></p>
       </article>
 
-      <article data-fx="kasabian" class="card-w">
+      <article id="kasabian" data-fx="kasabian" class="card-w">
         <button class="cw-media cd-stage" type="button" data-cd-open aria-haspopup="dialog" data-cursor="Apri" data-cursor-en="Open">
           <span class="cd" aria-hidden="true">
             <span class="cd-disc" style="background-image:url(img/kasabian/disc.webp)"></span>
@@ -129,9 +127,17 @@
         <h3><a href="kasabian.html" class="title-link" data-en="Kasabian, 48:13">Kasabian, 48:13</a></h3>
         <p data-en="Restyling of the Kasabian album 48:13: cover, back, disc and booklet. I turned rock, electronic and psychedelic sound into a melting face and sharp lettering.">Restyling dell'album 48:13 dei Kasabian: copertina, retro, disco e libretto. Ho tradotto il suono rock, elettronico e psichedelico in un volto che si fonde e in una tipografia tagliente.</p>
         <p class="cw-link"><a href="kasabian.html" data-en="The project →">Il progetto →</a></p>
+        <div class="listen" data-listen="0YEIhLHs5kP5CpU7HBBRL6">
+          <button class="listen-btn" type="button" aria-expanded="false" aria-controls="listen-player">
+            <span class="listen-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14"><path class="i-play" fill="currentColor" d="M7 4.5v15l12-7.5z"/><path class="i-close" fill="currentColor" d="M6 6h12v12H6z"/></svg></span>
+            <span class="l-open" data-en="Listen to the album">Ascolta l'album</span><span class="l-close" data-en="Close the player">Chiudi il player</span>
+          </button>
+          <p class="listen-note" data-en="Plays through Spotify.">Si ascolta tramite Spotify.</p>
+          <div class="listen-player" id="listen-player" hidden></div>
+        </div>
       </article>
 
-      <article data-fx="punk" class="card-w">
+      <article id="punk" data-fx="punk" class="card-w">
         <a class="cw-media poster-stage" href="poster.html" data-cursor="Apri" data-cursor-en="Open">
           <span class="ps-fold" aria-hidden="true"><span class="ps-front" style="background-image:url(img/poster/cover.webp)"></span></span>
           <span class="sr-only" data-en="Open the Punk poster">Apri il poster Punk</span>
@@ -142,7 +148,7 @@
         <p class="cw-link"><a href="poster.html" data-en="Unfold it →">Aprilo →</a></p>
       </article>
 
-      <article data-fx="olivetti" class="card-w">
+      <article id="olivetti" data-fx="olivetti" class="card-w">
         <div class="cw-media"><img src="img/olivetti.jpg" data-full="img/olivetti-post.webp" alt="Post Instagram di Alimentari Olivetti con il logo del negozio, dal 1966" data-en-alt="Alimentari Olivetti Instagram post with the shop logo, since 1966" loading="lazy"></div>
         <p class="kicker">Social media management</p>
         <h3>Alimentari Olivetti</h3>
@@ -150,7 +156,7 @@
         <p class="cw-link"><a href="https://www.instagram.com/alimentari.olivetti/" target="_blank" rel="noopener">Instagram ↗</a></p>
       </article>
 
-      <article data-fx="fts" class="card-w">
+      <article id="fts" data-fx="fts" class="card-w">
         <div class="cw-media"><img src="img/fts.webp" alt="Sito web di F.T.S." data-en-alt="F.T.S. website" loading="lazy"></div>
         <p class="kicker" data-en="Website">Sito web</p>
         <h3>F.T.S.</h3>
@@ -158,7 +164,7 @@
         <p class="cw-link"><a href="https://ftsto.it/" target="_blank" rel="noopener" data-en="Visit the site ↗">Visita il sito ↗</a></p>
       </article>
 
-      <article data-fx="cstations" class="card-w">
+      <article id="cstations" data-fx="cstations" class="card-w">
         <a class="cw-media" href="https://www.chicomfactory.com/" target="_blank" rel="noopener" data-cursor="Visita" data-cursor-en="Visit"><img class="no-zoom" src="img/chicom-landing.webp" alt="Landing page C_Stations di CHICOM: Ordine più Pulizia uguale Più Sicurezza" data-en-alt="CHICOM C_Stations landing page: Order plus Cleaning equals More Safety" loading="lazy"></a>
         <p class="kicker">Landing page · CHICOM</p>
         <h3>C_Stations</h3>
@@ -166,19 +172,19 @@
         <p class="cw-link"><a href="https://www.chicomfactory.com/" target="_blank" rel="noopener" data-en="Visit the landing page ↗">Visita la landing page ↗</a></p>
       </article>
 
-      <article data-fx="momento" class="card-w half">
-        <a class="cw-media ph-link" href="momento.html" data-cursor="Vedi progetto" data-cursor-en="View project"><img class="no-zoom" src="img/momento.webp" alt="Key visual di MOMENTO: una figura sfocata dietro un vetro, con il logo" data-en-alt="MOMENTO key visual: a blurred figure behind glass, with the logo" loading="lazy"></a>
+      <article id="momento" data-fx="momento" class="card-w half">
+        <a class="cw-media ph-link mo-media" href="momento.html" data-cursor="Vedi progetto" data-cursor-en="View project"><img class="no-zoom" src="img/momento.webp" alt="Key visual di MOMENTO: una figura sfocata dietro un vetro, con il logo" data-en-alt="MOMENTO key visual: a blurred figure behind glass, with the logo" loading="lazy"><span class="mo-veil" aria-hidden="true"><svg class="mo-skull" viewBox="0 0 120 140"><path d="M32 100C16 93 9 79 9 60 9 30 32 9 60 9s51 21 51 51c0 19-7 33-23 40v26c0 4-3 7-7 7H39c-4 0-7-3-7-7z" fill="none" stroke="currentColor" stroke-width="11" stroke-linejoin="round"/><path d="M53 112v21M67 112v21" stroke="currentColor" stroke-width="9" stroke-linecap="round"/><circle cx="40" cy="64" r="12" fill="none" stroke="currentColor" stroke-width="9"/><circle cx="80" cy="64" r="12" fill="none" stroke="currentColor" stroke-width="9"/></svg><span class="mo-tag">Post Mortem. Ante Vitam</span></span></a>
         <p class="kicker" data-en="Concept, brand identity, social and app">Concept, brand identity, social e app</p>
         <h3><a href="momento.html" class="title-link">Momento</a></h3>
         <p data-en="An immersive experience that simulates your own end so you can go back to living authentically. Name, logo, key visual, social, app and guerrilla.">Un'esperienza immersiva che simula la propria fine per tornare a vivere in modo autentico. Nome, logo, key visual, social, app e guerrilla.</p>
         <p class="cw-link"><a href="momento.html" data-en="The project →">Il progetto →</a></p>
       </article>
 
-      <article data-fx="loghi" class="card-w half">
+      <article id="loghi" data-fx="loghi" class="card-w half">
         <div class="cw-media logos-mini">
-          <span class="lm tile-dark"><img src="img/logo-healthy-strong.webp" alt="Logo Healthy &amp; Strong" loading="lazy"></span>
-          <span class="lm tile-cream"><img src="img/logo-marziano-romina.webp" alt="Logo Marziano Romina" loading="lazy"></span>
-          <span class="lm tile-light lm-wide"><img src="img/logo-ritual-tattoo.webp" alt="Logo Ritual Tattoo" loading="lazy"></span>
+          <span class="lm tile-dark"><img src="img/logo-healthy-strong.webp" alt="Logo Healthy &amp; Strong" loading="lazy"><span class="lm-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5L21 21M10.5 7.5v6M7.5 10.5h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></span>
+          <span class="lm tile-cream"><img src="img/logo-marziano-romina.webp" alt="Logo Marziano Romina" loading="lazy"><span class="lm-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5L21 21M10.5 7.5v6M7.5 10.5h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></span>
+          <span class="lm tile-light lm-wide"><img src="img/logo-ritual-tattoo.webp" alt="Logo Ritual Tattoo" loading="lazy"><span class="lm-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5L21 21M10.5 7.5v6M7.5 10.5h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></span>
         </div>
         <p class="kicker" data-en="Logo design · small businesses">Logo design · piccole attività</p>
         <h3 data-en="Logos">Loghi</h3>
@@ -196,7 +202,7 @@
         <div>
           <h3 data-en="Marketing and communication">Marketing e Comunicazione</h3>
           <p class="org"><a class="org-link" href="https://www.chicomvisual.com/" target="_blank" rel="noopener">CHICOM S.A.S. <span class="arr" aria-hidden="true">↗</span></a></p>
-          <p data-en="Corporate identity, social media, website, catalogue, video for clients, quotes and deadlines, direct client management and teamwork with departments and suppliers.">Immagine coordinata, social, sito, catalogo, video per i clienti, preventivi e scadenze, gestione diretta del cliente e lavoro in team con reparti e fornitori.</p>
+          <p class="hl-p"><span class="hl" data-en="Corporate identity, social media, website, catalogue, video for clients, quotes and deadlines, direct client management and teamwork with departments and suppliers.">Immagine coordinata, social, sito, catalogo, video per i clienti, preventivi e scadenze, gestione diretta del cliente e lavoro in team con reparti e fornitori.</span></p>
         </div>
       </li>
       <li>
@@ -204,7 +210,7 @@
         <div>
           <h3>Graphic &amp; Packaging Designer</h3>
           <p class="org"><a class="org-link" href="https://techartzone.com/" target="_blank" rel="noopener">Tech Art S.r.l. <span class="arr" aria-hidden="true">↗</span></a></p>
-          <p data-en="Packaging from concept to print, still-life photography, product line identities.">Packaging dal concept alla stampa, fotografia still life, identità delle linee di prodotto.</p>
+          <p class="hl-p"><span class="hl" data-en="Packaging from concept to print, still-life photography, product line identities.">Packaging dal concept alla stampa, fotografia still life, identità delle linee di prodotto.</span></p>
         </div>
       </li>
       <li>
@@ -212,7 +218,7 @@
         <div>
           <h3>Event &amp; Graphic Design</h3>
           <p class="org"><a class="org-link" href="https://wovostore.com/" target="_blank" rel="noopener">WOVO <span class="arr" aria-hidden="true">↗</span></a> · <span data-en="graduation thesis collaboration">collaborazione per la tesi di laurea</span></p>
-          <p data-en="Design of an educational event, from concept to visual identity.">Progettazione di un evento educativo, dal concept all'identità visiva.</p>
+          <p class="hl-p"><span class="hl" data-en="Design of an educational event, from concept to visual identity.">Progettazione di un evento educativo, dal concept all'identità visiva.</span></p>
         </div>
       </li>
       <li>
@@ -223,19 +229,6 @@
         </div>
       </li>
     </ol>
-  </section>
-
-  <section id="collaborazioni" class="section collab">
-    <h2 data-en="Collaborations">Collaborazioni</h2>
-    <p class="intro" data-en="Projects made with other people, each bringing their own craft.">Progetti nati insieme ad altre persone, ognuno con il suo mestiere.</p>
-    <ul class="collab-list">
-      <li><a class="collab-row" href="https://profili-cv.github.io/sebastyan-buryas/#laboratorio" target="_blank" rel="noopener">
-        <span class="collab-name"><span data-en="This portfolio">Questo portfolio</span><span class="collab-desc" data-en="The site you are on, designed and built together with Sebastyan Buryas, media artist.">Il sito che stai guardando, progettato e costruito insieme a Sebastyan Buryas, media artist.</span></span>
-        <span class="collab-with"><span data-en="with">con</span> Sebastyan Buryas</span>
-        <span class="collab-year">2026</span>
-        <span class="collab-arrow" aria-hidden="true">↗</span>
-      </a></li>
-    </ul>
   </section>
 
   <section id="chi-sono" class="section about">
@@ -309,6 +302,10 @@
   </button>
 </div>
 <script src="script.js?v=20"></script>
+<script src="menu.js?v=1"></script>
+<script src="highlight.js?v=1"></script>
+<script src="listen.js?v=1"></script>
+<script src="interact.js?v=1"></script>
 <script src="lightbox.js?v=7" data-images=".ph img:not(.no-zoom), .cw-media > img:not(.no-zoom), .ff-posts img, .cd-gallery img, .lm img"></script>
 <script src="lenis.min.js?v=1.1.13"></script>
 <script src="motion.js?v=1"></script>
@@ -318,7 +315,7 @@
 <script src="pin.js?v=1"></script>
 <script src="wheel.js?v=2"></script>
 <script src="preloader.js?v=1"></script>
-<script src="proj-fx.js?v=4"></script>
+<script src="proj-fx.js?v=5"></script>
 <script src="cv-lang.js?v=1"></script>
 <script src="cursor.js?v=12"></script>
 <script data-goatcounter="https://virginia-dalmasso.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>

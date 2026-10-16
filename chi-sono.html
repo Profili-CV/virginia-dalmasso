@@ -17,8 +17,8 @@
 <link rel="icon" href="favicon.svg?v=2" type="image/svg+xml">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="fonts/inter-tight.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="style.css?v=57w">
-<link rel="stylesheet" href="about.css?v=13">
+<link rel="stylesheet" href="style.css?v=58">
+<link rel="stylesheet" href="about.css?v=14">
 <script>try{if(!sessionStorage.getItem("pl-seen"))document.documentElement.classList.add("pl-on")}catch(e){document.documentElement.classList.add("pl-on")}</script>
 </head>
 <body>
@@ -61,11 +61,11 @@
     </div>
   </section>
 
-  <section class="ab-numbers" aria-label="In numeri" data-en-label="In numbers">
-    <div><b>4</b><span data-en="years in-house">anni in azienda</span></div>
-    <div><b>3</b><span data-en="companies: CHICOM, Tech Art, WOVO">aziende: CHICOM, Tech Art, WOVO</span></div>
-    <div><b>4</b><span data-en="big clients: Leonardo, Barilla, Coca-Cola, Raspini">grandi clienti: Leonardo, Barilla, Coca-Cola, Raspini</span></div>
-    <div><b>1</b><span data-en="motto: think big">motto: think big</span></div>
+  <section class="ab-numbers nums" aria-label="In numeri" data-en-label="In numbers">
+    <div class="num" data-to="4"><b class="num-n">4</b><span class="num-l" data-en="years in-house">anni in azienda</span><span class="num-viz num-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span></div>
+    <div class="num" data-to="3"><b class="num-n">3</b><span class="num-l" data-en="companies">aziende</span><span class="num-viz num-chips"><i>CHICOM</i><i>Tech Art</i><i>WOVO</i></span></div>
+    <div class="num" data-to="4"><b class="num-n">4</b><span class="num-l" data-en="big clients">grandi clienti</span><span class="num-viz num-chips"><i>Leonardo</i><i>Barilla</i><i>Coca-Cola</i><i>Raspini</i></span></div>
+    <div class="num num-motto" data-to="1"><b class="num-n">1</b><span class="num-l" data-en="motto">motto</span><span class="num-viz num-big">think big</span></div>
   </section>
 
   <section class="vt" id="storia" aria-label="Il mio percorso" data-en-label="My path">
@@ -100,7 +100,7 @@
 
   <section class="ab-services">
     <h2 data-en="What I can do for you">Cosa posso fare per te</h2>
-    <ul class="ab-grid"><li class="s1"><h3 data-en="Brand identity and logos">Brand identity e loghi</h3><p data-en="Marks and visual identities for companies and small businesses.">Marchi e immagini coordinate per aziende e piccole attività.</p></li><li class="s2"><h3 data-en="Packaging">Packaging</h3><p data-en="From concept to print, with the product shoot.">Dal concept alla messa in stampa, con lo shooting di prodotto.</p></li><li class="s3"><h3 data-en="Social media">Social media</h3><p data-en="Editorial plans, graphics and copy that make a brand recognisable.">Piani editoriali, grafiche e testi che fanno riconoscere un brand.</p></li><li class="s4"><h3 data-en="Video">Video</h3><p data-en="Editing and motion for campaigns, clients and social media.">Montaggio e motion per campagne, clienti e social.</p></li><li class="s5"><h3 data-en="Events">Eventi</h3><p data-en="From the name to the stage: identity, spaces, programme and communication.">Dal nome al palco: identità, spazi, programma e comunicazione.</p></li><li class="s6"><h3 data-en="Print and web">Stampa e web</h3><p data-en="Catalogues, leaflets, exhibition panels and WordPress sites.">Cataloghi, leaflet, pannelli espositivi e siti WordPress.</p></li></ul>
+    <ul class="ab-grid svc-grid"><li class="s1 svc" tabindex="0"><span class="svc-ico" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4l8 9-8 15-8-15z"/><path d="M16 13v8"/><circle cx="16" cy="12" r="1.6"/></svg></span><h3 data-en="Brand identity and logos">Brand identity e loghi</h3><p data-en="Marks and visual identities for companies and small businesses.">Marchi e immagini coordinate per aziende e piccole attività.</p><p class="svc-works"><span data-en="See it in:">Lo vedi in:</span> <a href="index.html#loghi">Loghi</a><a href="index.html#momento">Momento</a><a href="index.html#bwood">B-Wood</a></p></li><li class="s2 svc" tabindex="0"><span class="svc-ico" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 10l11-5 11 5v12l-11 5-11-5z"/><path d="M5 10l11 5 11-5M16 15v12"/><path d="M10.5 7.5l11 5" opacity=".55"/></svg></span><h3 data-en="Packaging">Packaging</h3><p data-en="From concept to print, with the product shoot.">Dal concept alla messa in stampa, con lo shooting di prodotto.</p><p class="svc-works"><span data-en="See it in:">Lo vedi in:</span> <a href="index.html#kasabian">Kasabian, 48:13</a></p></li><li class="s3 svc" tabindex="0"><span class="svc-ico" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6h20a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H14l-6 5v-5H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"/><path d="M16 18.5s-4.5-2.6-4.5-5.6a2.3 2.3 0 0 1 4.5-.9 2.3 2.3 0 0 1 4.5.9c0 3-4.5 5.6-4.5 5.6z"/></svg></span><h3 data-en="Social media">Social media</h3><p data-en="Editorial plans, graphics and copy that make a brand recognisable.">Piani editoriali, grafiche e testi che fanno riconoscere un brand.</p><p class="svc-works"><span data-en="See it in:">Lo vedi in:</span> <a href="index.html#olivetti">Alimentari Olivetti</a><a href="index.html#momento">Momento</a></p></li><li class="s4 svc" tabindex="0"><span class="svc-ico" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="19" height="16" rx="2.5"/><path d="M22 13.5l7-3.5v12l-7-3.5"/><path d="M10 12.5v7l5.5-3.5z"/></svg></span><h3 data-en="Video">Video</h3><p data-en="Editing and motion for campaigns, clients and social media.">Montaggio e motion per campagne, clienti e social.</p><p class="svc-works"><span data-en="See it in:">Lo vedi in:</span> <a href="index.html#fluid">FLUID*</a></p></li><li class="s5 svc" tabindex="0"><span class="svc-ico" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h24v4a3 3 0 0 0 0 6v4H4v-4a3 3 0 0 0 0-6z"/><path d="M20 9v14" stroke-dasharray="2 3"/><path d="M9 14h6M9 18h4"/></svg></span><h3 data-en="Events">Eventi</h3><p data-en="From the name to the stage: identity, spaces, programme and communication.">Dal nome al palco: identità, spazi, programma e comunicazione.</p><p class="svc-works"><span data-en="See it in:">Lo vedi in:</span> <a href="index.html#fluid">FLUID*</a></p></li><li class="s6 svc" tabindex="0"><span class="svc-ico" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="22" rx="2"/><path d="M8 9h8M8 13h8M8 17h4"/><path d="M19 16l10 4-4.4 1.6L23 26z" fill="currentColor"/></svg></span><h3 data-en="Print and web">Stampa e web</h3><p data-en="Catalogues, leaflets, exhibition panels and WordPress sites.">Cataloghi, leaflet, pannelli espositivi e siti WordPress.</p><p class="svc-works"><span data-en="See it in:">Lo vedi in:</span> <a href="index.html#bwood">B-Wood</a><a href="index.html#punk">Punk is inside you</a><a href="index.html#fts">F.T.S.</a><a href="index.html#cstations">C_Stations</a></p></li></ul>
   </section>
 
   <section class="ab-tools">
@@ -138,6 +138,7 @@
   </button>
 </div>
 <script src="script.js?v=20"></script>
+<script src="menu.js?v=1"></script>
 <script src="lightbox.js?v=7" data-images=".sheets img"></script>
 <script src="sheets.js?v=2"></script>
 <script src="story.js?v=3"></script>
@@ -145,6 +146,7 @@
 <script src="motion.js?v=1"></script>
 <script src="preloader.js?v=1"></script>
 <script src="cv-lang.js?v=1"></script>
+<script src="about-fx.js?v=1"></script>
 <script src="cursor.js?v=12"></script>
 <script data-goatcounter="https://virginia-dalmasso.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
