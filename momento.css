@@ -168,7 +168,7 @@
 @media (max-width: 760px) { .cs-grid2 { grid-template-columns: minmax(0, 1fr); } }
 
 /* B-Wood: black and white like the book, with the warm wood of the boards */
-.cs-bwood { --paper: #111111; --blush: #1B1B1B; --ink: #F2F0EC; --grey: #A6A39D; --rule: #2A2A2A; --accent: #C98A4B; }
+.cs-bwood { --paper: #111111; --blush: #1B1B1B; --ink: #F2F0EC; --grey: #A6A39D; --rule: #2A2A2A; --accent: #C98A4B; --on-acc: #111111; }
 .cs-bwood .nav { background: color-mix(in srgb, #111 88%, transparent); }
 .cs-bwood .bw-logo { filter: invert(1); width: min(100%, 560px); }
 .bw-open { margin: 20px 0 0; }
