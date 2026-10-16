@@ -162,3 +162,27 @@
   .fl-programme { grid-template-columns: minmax(0, 1fr); }
   .fl-play { left: 12px; bottom: 12px; min-height: 44px; font-size: 14px; }
 }
+
+/* Shared: two-up image grid for case studies */
+.cs-grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 760px) { .cs-grid2 { grid-template-columns: minmax(0, 1fr); } }
+
+/* B-Wood: black and white like the book, with the warm wood of the boards */
+.cs-bwood { --paper: #111111; --blush: #1B1B1B; --ink: #F2F0EC; --grey: #A6A39D; --rule: #2A2A2A; --accent: #C98A4B; }
+.cs-bwood .nav { background: color-mix(in srgb, #111 88%, transparent); }
+.cs-bwood .bw-logo { filter: invert(1); width: min(100%, 560px); }
+.bw-open { margin: 20px 0 0; }
+
+/* Kasabian 48:13: black with the cover's burning orange */
+.cs-kas { --paper: #070707; --blush: #121212; --ink: #F1EFEC; --grey: #A5A09A; --rule: #242424; --accent: #FF6A2B; }
+.cs-kas .nav { background: color-mix(in srgb, #070707 88%, transparent); }
+.ks-title { margin: 0; font-family: var(--display); font-weight: 900; font-size: clamp(48px, 9vw, 120px); line-height: .9; letter-spacing: -0.04em; text-transform: uppercase; }
+.ks-title span { display: block; color: var(--accent); letter-spacing: .02em; }
+.ks-cover { max-width: 720px; }
+.ks-ba { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; }
+.ks-ba figcaption { font-family: var(--mono); }
+.ks-disc { max-width: 460px; background: transparent; }
+.ks-disc img { animation: ks-spin 24s linear infinite; }
+@keyframes ks-spin { to { rotate: 360deg; } }
+@media (prefers-reduced-motion: reduce) { .ks-disc img { animation: none; } }
+@media (max-width: 760px) { .ks-ba { grid-template-columns: minmax(0, 1fr); } }

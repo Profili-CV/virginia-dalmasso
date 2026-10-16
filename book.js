@@ -6,7 +6,7 @@
   var opener = document.querySelector('[data-book-open]');
   if (!opener) return;
   var N = 66;
-  function src(n) { return 'img/bwood/' + (n < 10 ? '0' + n : n) + '.jpg'; }
+  function src(n) { return 'img/bwood/' + (n < 10 ? '0' + n : n) + '.webp'; }
   var COVER = { s: src(1), h: 'r' }, BACK = { s: src(1), h: 'l' };
   var spreads = [{ l: null, r: COVER }];
   for (var i = 2; i <= N; i++) spreads.push({ l: { s: src(i), h: 'l' }, r: { s: src(i), h: 'r' } });

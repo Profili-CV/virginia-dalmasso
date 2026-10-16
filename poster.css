@@ -11,8 +11,8 @@
 .pp-sheet { position: absolute; inset: 0; transform-style: preserve-3d; transition: transform 1.2s cubic-bezier(.6,0,.2,1); }
 .pq { position: absolute; width: 50%; height: 50%; transform-style: preserve-3d; transition: transform 1s cubic-bezier(.6,0,.2,1); }
 .pq > span { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; background-size: 200% 200%; background-repeat: no-repeat; }
-.pf { background-image: url(img/poster/p-1.jpg); }
-.pb { background-image: url(img/poster/p-2.jpg); transform: rotateY(180deg); }
+.pf { background-image: url(img/poster/p-1.webp); }
+.pb { background-image: url(img/poster/p-2.webp); transform: rotateY(180deg); }
 .q-tl { left: 0; top: 0; }
 .q-tr { left: 50%; top: 0; transform-origin: left center; }
 .pp-bottom { position: absolute; left: 0; top: 50%; width: 100%; height: 50%; transform-style: preserve-3d; transform-origin: center top; transition: transform 1s cubic-bezier(.6,0,.2,1); }
