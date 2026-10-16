@@ -647,3 +647,67 @@ html { scrollbar-color: color-mix(in srgb, var(--ink) 35%, transparent) transpar
 .ctag { position: fixed; left: 0; top: 0; z-index: 99; pointer-events: none; padding: 6px 11px; border-radius: 999px; background: var(--ink); color: var(--paper); font: 600 12.5px/1 var(--body); letter-spacing: .02em; white-space: nowrap; opacity: 0; scale: .85; transition: opacity .18s ease, scale .25s cubic-bezier(0.23, 1, 0.32, 1); box-shadow: 0 6px 18px rgba(0,0,0,.18); }
 .ctag.is-on { opacity: 1; scale: 1; }
 @media (prefers-reduced-motion: reduce) { .ctag { transition: opacity .15s ease; } }
+
+/* ---- Per-project flying elements (proj-fx.js) ---- */
+.pfx-box { position: relative; }
+.pfx-box > .ph, .pfx-box > .cw-media, .pfx-box .ph-cover, .pfx-box.fl-cover > img { position: relative; z-index: 1; }
+.pfx { position: absolute; z-index: 2; pointer-events: none; display: block; opacity: 0; scale: .4; transition: opacity .35s ease, scale .5s cubic-bezier(.2,1.6,.4,1); will-change: translate; }
+.pfx.pfx-back { z-index: 0; }
+.pfx.on { opacity: 1; scale: 1; }
+.pfx svg { display: block; width: 100%; height: auto; overflow: visible; }
+.pfx > * { rotate: var(--r, 0deg); }
+/* FLUID: glossy liquid drops that wobble */
+.pfx-drop { display: block; aspect-ratio: 1; border-radius: 58% 42% 55% 45% / 52% 58% 42% 48%;
+  background: radial-gradient(circle at 32% 28%, rgba(255,255,255,.9) 0 7%, rgba(255,255,255,0) 15%), radial-gradient(circle at 62% 70%, color-mix(in srgb, var(--dc) 70%, #fff) 0%, var(--dc) 45%, color-mix(in srgb, var(--dc) 60%, #000) 100%);
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--dc) 45%, transparent), inset -4px -6px 10px rgba(0,0,0,.25);
+  animation: pfx-blob 6s ease-in-out infinite; animation-delay: var(--d, 0s); }
+@keyframes pfx-blob {
+  0%, 100% { border-radius: 58% 42% 55% 45% / 52% 58% 42% 48%; translate: 0 0; }
+  33% { border-radius: 45% 55% 42% 58% / 58% 44% 56% 42%; translate: 0 -6px; }
+  66% { border-radius: 52% 48% 60% 40% / 44% 52% 48% 56%; translate: 0 4px; }
+}
+/* B-Wood longboard */
+.pfx-board { left: 0 !important; }
+.pfx-board .pfx-wheel { transform-box: fill-box; transform-origin: center; rotate: var(--spin, 0deg); }
+/* Kasabian notes */
+.pfx-note { color: var(--ink); }
+.pfx-note:nth-of-type(odd) { color: var(--accent); }
+.pfx-note svg { animation: pfx-sway 2.4s ease-in-out infinite; animation-delay: var(--d, 0s); }
+@keyframes pfx-sway { 0%, 100% { rotate: -10deg; } 50% { rotate: 10deg; } }
+/* Punk sticker and pins */
+.pfx-star svg { rotate: 12deg; filter: drop-shadow(3px 4px 0 rgba(0,0,0,.25)); }
+.pfx-pin svg { filter: drop-shadow(0 2px 2px rgba(0,0,0,.3)); }
+/* Olivetti likes */
+.pfx-like { display: inline-flex; align-items: center; gap: 5px; padding: 7px 10px; border-radius: 999px; background: #fff; box-shadow: 0 8px 20px rgba(0,0,0,.18); font: 700 13px/1 var(--body); color: #262626; }
+.pfx-like svg { width: 18px; }
+/* F.T.S. extruded profiles: they slide out from behind the screenshot */
+.pfx-prof svg { filter: drop-shadow(0 4px 6px rgba(0,0,0,.18)); }
+/* C_Stations sparkles and soap bubbles */
+.pfx-spark { color: #F5C542; }
+.pfx-spark svg { animation: pfx-twinkle 1.8s ease-in-out infinite; animation-delay: var(--d, 0s); }
+.pfx-spark-b { color: #4FC3F7; }
+@keyframes pfx-twinkle { 0%, 100% { scale: .7; opacity: .6; } 50% { scale: 1.1; opacity: 1; } }
+.pfx-bubble { display: block; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.95) 0 8%, rgba(255,255,255,.15) 30%, rgba(180,220,255,.25) 70%, rgba(255,255,255,.6) 100%); box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.7), 0 4px 10px rgba(0,0,0,.08); }
+/* Momento: falling sand over the key visual */
+.pfx-sandbox { height: 100%; aspect-ratio: auto; overflow: hidden; border-radius: 6px; }
+.pfx-sandbox { height: calc(100% - 0px); }
+.pfx-sand { position: absolute; inset: 0; }
+.pfx-sand i { position: absolute; top: -6px; width: 3px; height: 3px; border-radius: 50%; background: #E8DCC0; opacity: .85; animation: pfx-fall 3.2s linear infinite; }
+.pfx-sand i:nth-child(1) { left: 12%; animation-delay: 0s; } .pfx-sand i:nth-child(2) { left: 27%; animation-delay: .9s; } .pfx-sand i:nth-child(3) { left: 41%; animation-delay: 1.7s; } .pfx-sand i:nth-child(4) { left: 55%; animation-delay: .4s; }
+.pfx-sand i:nth-child(5) { left: 66%; animation-delay: 2.3s; } .pfx-sand i:nth-child(6) { left: 78%; animation-delay: 1.2s; } .pfx-sand i:nth-child(7) { left: 88%; animation-delay: 2.8s; } .pfx-sand i:nth-child(8) { left: 34%; animation-delay: 2s; width: 2px; height: 2px; }
+@keyframes pfx-fall { from { translate: 0 0; } to { translate: 6px 340px; } }
+/* Logos: bezier anchor points */
+.pfx-anchor svg { filter: drop-shadow(0 2px 4px rgba(0,0,0,.12)); }
+@media (prefers-color-scheme: dark) { .pfx-anchor path, .pfx-anchor rect { stroke: #B98CF0; } .pfx-anchor circle { fill: #B98CF0; } .pfx-anchor rect { fill: #1A161C; } }
+/* Reduced motion: everything shown, still */
+.pfx-still .pfx { transition: none; }
+.pfx-still .pfx-drop, .pfx-still .pfx-note svg, .pfx-still .pfx-spark svg { animation: none; }
+.pfx-still .pfx-sandbox { display: none; }
+.pfx-layer { position: absolute; pointer-events: none; display: block; }
+.pfx-sand i { background: #6B6152; opacity: .7; }
+.pfx-note, .pfx-note:nth-of-type(odd) { color: #fff; }
+.pfx-note:nth-child(2) { color: #FF7A3C; }
+.pfx-note svg { filter: drop-shadow(0 2px 4px rgba(0,0,0,.5)); }
+.pfx-sand i { width: 4px; height: 4px; }
+.cs-hero.pfx-box { overflow-x: clip; }
+html, body { overflow-x: clip; }
