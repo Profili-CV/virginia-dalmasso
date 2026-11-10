@@ -32,3 +32,32 @@
 #chi-sono>*:not(.floaties){position:relative;z-index:1}
 @media (max-width:760px){.floaties .f2,.floaties .f4{display:none}.floaties svg{opacity:.55}}
 @media (prefers-reduced-motion:reduce){.floaties svg{animation:none}.pill-grad{transition:none}.section h2{animation:none!important}}
+
+/* HERO ad artista: saluto gigante dietro il ritratto, poi scorri nelle sezioni */
+.hero{display:block;position:relative;max-width:none;padding:0;min-height:clamp(640px,96vh,1000px);overflow:clip;text-align:center;isolation:isolate}
+.hero::before{content:"";position:absolute;left:50%;bottom:-18%;width:min(1100px,120vw);aspect-ratio:1;transform:translateX(-50%);border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 34%,var(--paper)) 0,color-mix(in srgb,var(--accent) 10%,var(--paper)) 48%,transparent 70%);z-index:-1}
+.hero-text{display:contents}
+.hero .eyebrow{position:absolute;top:clamp(20px,4vw,44px);left:0;right:0;margin:0;z-index:1}
+.hero h1{position:absolute;left:0;right:0;top:clamp(60px,7.5vw,110px);margin:0;z-index:1;font-size:clamp(60px,15.5vw,248px);line-height:.84;letter-spacing:-.05em;text-transform:uppercase}
+.hero h1 span{display:block}
+.hero h1 span:first-child{font-size:.5em;letter-spacing:-.04em;margin-bottom:.06em}
+.hero-photo{position:absolute;left:50%;bottom:-11%;z-index:2;width:min(520px,62vw);max-width:none;margin:0;padding:0;background:none;border-radius:0;transform:translateX(-50%)}
+.hero-photo .portrait{border-radius:0;box-shadow:none;aspect-ratio:808/904;object-fit:contain;filter:drop-shadow(0 22px 30px rgba(38,20,60,.28))}
+.pin-tape{display:none}
+.pin-photo:hover{transform:none}
+.pin-tools{right:50%;transform:translateX(50%);bottom:-26px;color:var(--grey)}
+.pin-hint{color:var(--grey)!important}
+.pin-clear{border-color:var(--grey);color:var(--grey)}
+.hero .seal{left:auto;right:-10%;bottom:30%}
+.hero-lead{position:absolute;left:var(--gutter);bottom:clamp(36px,7vw,84px);z-index:3;max-width:min(21em,24vw);margin:0;padding:0 0 0 16px;border-left:3px solid var(--accent);text-align:left;font-size:clamp(14px,1.25vw,18px);line-height:1.5}
+.hero-links{position:absolute;right:var(--gutter);bottom:clamp(36px,7vw,84px);z-index:3;flex-direction:column;align-items:flex-end;gap:14px}
+@media (max-width:900px){
+.hero{min-height:0;padding:70px var(--gutter) 0;display:flex;flex-direction:column;align-items:center}
+.hero .eyebrow{position:static;order:0;margin-bottom:10px}
+.hero h1{position:static;order:1;font-size:clamp(54px,17vw,130px)}
+.hero-photo{position:relative;left:auto;transform:none;order:2;width:min(420px,86vw);margin-top:-8vw}
+.hero-lead{position:static;order:3;max-width:34em;margin:20px 0 14px;border-left:0;padding:0;text-align:center;font-size:17px}
+.hero-links{position:static;order:4;flex-direction:row;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
+.hero::before{bottom:auto;top:30%}
+.hero .seal{right:2%;bottom:14%;width:84px}
+}
